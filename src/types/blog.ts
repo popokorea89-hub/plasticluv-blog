@@ -31,12 +31,13 @@ export interface BlogPostMeta {
 }
 
 export const categoryConfig = {
-  all: { label: "All", emoji: "◎" },
-  "anti-aging": { label: "Anti-Aging", emoji: "✧" },
-  "beauty-science": { label: "Beauty Science", emoji: "△" },
-  "k-beauty": { label: "K-Beauty", emoji: "◇" },
-  recovery: { label: "Recovery & Care", emoji: "○" },
-  safety: { label: "Safety", emoji: "☆" },
+  all: { label: "All" },
+  eyes: { label: "Eyes" },
+  lifting: { label: "Lifting" },
+  injectables: { label: "Injectables" },
+  skin: { label: "Skin" },
+  "before-and-after": { label: "Before & After" },
+  "beauty-insider": { label: "Beauty Insider" },
 } as const;
 
 export const categories = Object.keys(categoryConfig) as (keyof typeof categoryConfig)[];
