@@ -78,21 +78,13 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
 
           {/* Right Side */}
           <div className="flex items-center gap-5">
-            {/* Nav Links */}
-            <Link
-              href="/"
-              className="hidden md:block text-sm font-medium text-sub hover:text-text transition-colors"
-            >
-              {t("blog")}
-            </Link>
-
-            {/* Browse Button */}
+            {/* Articles Dropdown */}
             <div className="relative hidden md:block" ref={browseRef}>
               <button
                 onClick={() => setBrowseOpen(!browseOpen)}
                 className="text-sm font-medium text-sub hover:text-text transition-colors flex items-center gap-1"
               >
-                Browse
+                Articles
                 <svg
                   width="12"
                   height="12"
@@ -139,7 +131,7 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
               href="/about"
               className="hidden md:block text-sm font-medium text-sub hover:text-text transition-colors"
             >
-              {t("about")}
+              Dr. Lee
             </Link>
 
             {/* Search Button */}
