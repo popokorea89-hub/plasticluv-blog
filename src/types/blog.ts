@@ -30,14 +30,15 @@ export interface BlogPostMeta {
   featured?: boolean;
 }
 
-export const categories = [
-  "All",
-  "Anti-Aging",
-  "Eye Surgery",
-  "Fillers & Botox",
-  "Rhinoplasty",
-  "Recovery",
-  "Choosing a Surgeon",
-] as const;
+export const categoryConfig = {
+  all: { label: "All", emoji: "🔍" },
+  insights: { label: "Insights", emoji: "💡" },
+  science: { label: "Science", emoji: "🧬" },
+  "k-aesthetics": { label: "K-Aesthetics", emoji: "🇰🇷" },
+  recovery: { label: "Recovery", emoji: "🩹" },
+  safety: { label: "Safety", emoji: "🛡️" },
+} as const;
 
-export type Category = (typeof categories)[number];
+export const categories = Object.keys(categoryConfig) as (keyof typeof categoryConfig)[];
+
+export type Category = keyof typeof categoryConfig;
