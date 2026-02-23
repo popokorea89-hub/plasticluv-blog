@@ -131,7 +131,7 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
               href="/about"
               className="hidden md:block text-sm font-medium text-sub hover:text-text transition-colors"
             >
-              Dr. Lee
+              About
             </Link>
 
             {/* Search Button */}
