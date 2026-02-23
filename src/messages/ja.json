@@ -24,7 +24,7 @@
   "article": {
     "tableOfContents": "目次",
     "consultation": "この施術をお考えですか？",
-    "consultationDesc": "ソウルVIP整形外科のイ・ヨンウ医師による個別相談を受けられます。",
+    "consultationDesc": "VIP整形外科のDr. Yongwoo Leeによる個別相談を受けられます。",
     "bookFree": "無料相談を予約",
     "aboutAuthor": "著者について",
     "relatedPosts": "関連記事",
@@ -34,7 +34,7 @@
     "updated": "更新日"
   },
   "about": {
-    "title": "イ・ヨンウ医師",
+    "title": "Dr. Yongwoo Lee",
     "role": "形成外科専門医",
     "clinic": "VIP整形外科",
     "education": "学歴",
@@ -43,10 +43,10 @@
     "memberships": "学会活動",
     "bookConsultation": "相談を予約する",
     "ctaTitle": "新しい一歩を踏み出しましょう",
-    "ctaDesc": "イ・ヨンウ医師との個別相談で、あなたの目標と最適な方法を一緒に考えましょう。"
+    "ctaDesc": "Dr. Yongwoo Leeとの個別相談で、あなたの目標と最適な方法を一緒に考えましょう。"
   },
   "footer": {
-    "description": "ソウルから発信する、エビデンスに基づいた美容整形情報。",
+    "description": "美の芸術とケアの科学が出会う場所。",
     "quickLinks": "クイックリンク",
     "legal": "法的情報",
     "privacy": "プライバシーポリシー",

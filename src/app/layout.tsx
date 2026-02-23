@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Plastic Love",
   },
   description:
-    "Evidence-based plastic surgery insights from Dr. Yongwoo Lee, a board-certified plastic surgeon at VIP Plastic Surgery, South Korea.",
+    "Plastic Love — where the art of aesthetics meets the science of care. By Dr. Yongwoo Lee, board-certified plastic surgeon.",
   openGraph: {
     type: "website",
     siteName: "Plastic Love",

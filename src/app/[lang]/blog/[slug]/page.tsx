@@ -4,7 +4,7 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostBySlug, getPostSlugs, getRelatedPosts } from "@/lib/content";
 import { articleSchema, breadcrumbSchema, personSchema } from "@/lib/schema";
 import { Link } from "@/lib/i18n-routing";
-import Newsletter from "@/components/Newsletter";
+
 import type { Metadata } from "next";
 import { locales } from "@/lib/i18n";
 
@@ -236,10 +236,6 @@ export default async function ArticlePage({
           </section>
         )}
 
-        {/* Newsletter */}
-        <section className="mb-16">
-          <Newsletter />
-        </section>
       </div>
     </>
   );

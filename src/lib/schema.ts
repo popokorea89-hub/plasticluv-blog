@@ -137,7 +137,7 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: "Plastic Love",
     url: SITE_URL,
-    description: "Evidence-based plastic surgery insights from Dr. Yongwoo Lee, a board-certified plastic surgeon in South Korea.",
+    description: "Plastic Love — where the art of aesthetics meets the science of care. By Dr. Yongwoo Lee, board-certified plastic surgeon.",
     publisher: {
       "@type": "Organization",
       name: "Plastic Love",

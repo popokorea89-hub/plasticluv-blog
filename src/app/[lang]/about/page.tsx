@@ -34,38 +34,32 @@ const training = [
 
 const specialties = [
   {
-    title: "Facelift & Anti-Aging Surgery",
-    desc: "Primary specialty. Full facelift, mini facelift, mid-face lift, and comprehensive facial rejuvenation procedures to restore a youthful, natural appearance with long-lasting results.",
+    title: "Facelift & Anti-Aging",
+    desc: "Full, mini, and mid-face lifts for natural, long-lasting facial rejuvenation.",
     icon: "M12 8v4l2 2M12 2a10 10 0 100 20 10 10 0 000-20z",
     primary: true,
   },
   {
-    title: "Upper & Lower Blepharoplasty",
-    desc: "Primary specialty. Upper and lower eyelid surgery for drooping lids, under-eye bags, and periorbital rejuvenation. Combines functional improvement with aesthetic refinement.",
+    title: "Eye Surgery & Blepharoplasty",
+    desc: "Upper/lower eyelid surgery, ptosis correction, double eyelid, and epicanthoplasty.",
     icon: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z M12 9a3 3 0 100 6 3 3 0 000-6z",
     primary: true,
   },
   {
-    title: "Eye Surgery",
-    desc: "Double eyelid surgery, ptosis correction, epicanthoplasty, and revision procedures tailored to each patient's unique anatomy and aesthetic goals.",
-    icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z",
-    primary: false,
-  },
-  {
     title: "Botox & Fillers",
-    desc: "Precision-guided injectable treatments for wrinkle reduction, facial contouring, and natural volume enhancement with minimal downtime.",
+    desc: "Wrinkle reduction, facial contouring, and natural volume restoration.",
     icon: "M12 2v20M2 12h20",
     primary: false,
   },
   {
     title: "Thread Lifting",
-    desc: "Minimally invasive PDO and PLLA thread lift procedures for facial lifting and tightening, ideal for patients seeking non-surgical rejuvenation.",
+    desc: "Non-surgical PDO/PLLA thread lifts for facial lifting and tightening.",
     icon: "M12 2l9 4.5v5c0 5.25-3.56 10.15-9 11.5-5.44-1.35-9-6.25-9-11.5v-5L12 2z",
     primary: false,
   },
   {
     title: "Laser Treatments",
-    desc: "Advanced laser therapy for skin rejuvenation, pigmentation correction, scar improvement, and overall texture enhancement.",
+    desc: "Skin rejuvenation, pigmentation correction, and texture improvement.",
     icon: "M12 3v1m0 16v1m-8-9H3m18 0h-1m-2.636-5.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707",
     primary: false,
   },
@@ -133,7 +127,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 His extensive training at Pusan National University Hospital (PNUH) — from internship through residency, fellowship, and a clinical professorship — has given him deep expertise in both reconstructive and aesthetic plastic surgery. He specializes in anti-aging procedures, including upper and lower blepharoplasty, as well as non-surgical treatments such as Botox, dermal fillers, thread lifting, and laser therapy.
               </p>
               <p>
-                As a member of the International Society of Aesthetic Plastic Surgery (ISAPS) and several Korean professional societies, Dr. Lee stays at the forefront of global aesthetic surgery advances. Through Plastic Love, he shares evidence-based insights to help patients worldwide make informed decisions about their care.
+                As a member of the International Society of Aesthetic Plastic Surgery (ISAPS) and several Korean professional societies, Dr. Yongwoo Lee stays at the forefront of global aesthetic surgery advances. Through Plastic Love — born from a genuine love for the craft of plastic surgery — he shares evidence-based insights to help patients worldwide make informed decisions about their care.
               </p>
             </div>
 

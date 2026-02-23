@@ -24,7 +24,7 @@
   "article": {
     "tableOfContents": "목차",
     "consultation": "이 시술을 고려하고 계신가요?",
-    "consultationDesc": "서울 VIP 성형외과 이용우 원장에게 맞춤 상담을 받아보세요.",
+    "consultationDesc": "VIP 성형외과 이용우 원장에게 맞춤 상담을 받아보세요.",
     "bookFree": "무료 상담 예약",
     "aboutAuthor": "저자 소개",
     "relatedPosts": "관련 글",
@@ -34,7 +34,7 @@
     "updated": "수정일"
   },
   "about": {
-    "title": "이용우 원장",
+    "title": "Dr. Yongwoo Lee",
     "role": "성형외과 전문의",
     "clinic": "VIP 성형외과",
     "education": "학력",
@@ -43,10 +43,10 @@
     "memberships": "학회 활동",
     "bookConsultation": "상담 예약하기",
     "ctaTitle": "새로운 시작을 준비하세요",
-    "ctaDesc": "이용우 원장과 맞춤 상담을 통해 목표를 논의하고 최적의 방법을 찾아보세요."
+    "ctaDesc": "Dr. Yongwoo Lee와 맞춤 상담을 통해 목표를 논의하고 최적의 방법을 찾아보세요."
   },
   "footer": {
-    "description": "서울에서 전하는 근거 중심 성형외과 정보.",
+    "description": "아름다움의 예술과 의학의 과학이 만나는 곳.",
     "quickLinks": "바로가기",
     "legal": "법적 고지",
     "privacy": "개인정보처리방침",
