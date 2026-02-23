@@ -41,7 +41,7 @@ export default function Navbar({ lang }: { lang: Locale }) {
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-16 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="font-[family-name:var(--font-display)] text-2xl text-text">
+          <Link href="/" className="font-[family-name:var(--font-display)] text-2xl text-accent">
             Plastic Love
           </Link>
 
@@ -49,13 +49,13 @@ export default function Navbar({ lang }: { lang: Locale }) {
           <div className="hidden md:flex items-center gap-8">
             <Link
               href="/"
-              className="text-sm font-medium text-text hover:text-accent transition-colors"
+              className="text-sm font-medium text-sub hover:text-text transition-colors"
             >
               {t("blog")}
             </Link>
             <Link
               href="/about"
-              className="text-sm font-medium text-sub hover:text-accent transition-colors"
+              className="text-sm font-medium text-sub hover:text-text transition-colors"
             >
               {t("about")}
             </Link>
