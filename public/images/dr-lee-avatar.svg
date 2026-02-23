@@ -1,0 +1,40 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .avatar-text { font-family: 'Trebuchet MS', sans-serif; font-size: 12px; fill: white; }
+    </style>
+  </defs>
+  
+  <!-- Circular background -->
+  <circle cx="100" cy="100" r="100" fill="#8B7355"/>
+  
+  <!-- Outer ring -->
+  <circle cx="100" cy="100" r="100" fill="none" stroke="#B87A5E" stroke-width="3"/>
+  
+  <!-- Inner circle for contrast -->
+  <circle cx="100" cy="100" r="90" fill="#D4C8BA"/>
+  
+  <!-- Medical/Doctor icon - stethoscope stylized -->
+  <g transform="translate(100, 100)">
+    <!-- Head circle -->
+    <circle cx="0" cy="-25" r="20" fill="#2C2420"/>
+    
+    <!-- Stethoscope earpieces -->
+    <circle cx="-12" cy="-40" r="5" fill="#2C2420"/>
+    <circle cx="12" cy="-40" r="5" fill="#2C2420"/>
+    
+    <!-- Stethoscope tubes -->
+    <path d="M -12 -35 Q -20 -15 -15 5" stroke="#2C2420" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M 12 -35 Q 20 -15 15 5" stroke="#2C2420" stroke-width="4" fill="none" stroke-linecap="round"/>
+    
+    <!-- Stethoscope chest piece -->
+    <circle cx="0" cy="15" r="12" fill="none" stroke="#2C2420" stroke-width="4"/>
+    <circle cx="0" cy="15" r="8" fill="#B87A5E"/>
+    
+    <!-- Body/torso -->
+    <path d="M -15 -5 L -20 15 L 20 15 L 15 -5" fill="#2C2420"/>
+  </g>
+  
+  <!-- Text label -->
+  <text x="100" y="165" text-anchor="middle" class="avatar-text">Dr. Lee</text>
+</svg>

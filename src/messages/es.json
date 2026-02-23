@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "blog": "Blog",
+    "procedures": "Procedimientos",
+    "recovery": "Recuperación",
+    "about": "Acerca de",
+    "bookConsultation": "Reservar consulta",
+    "search": "Buscar artículos...",
+    "searchHint": "Popular: Rinoplastia, Cirugía de párpados, Rellenos, Recuperación"
+  },
+  "home": {
+    "badge": "PLASTIC LOVE",
+    "title": "Las respuestas que mereces antes de decidir",
+    "subtitle": "La guía honesta de un cirujano certificado — sin presión, sin discurso de ventas, solo la verdad.",
+    "featured": "Destacado",
+    "recentPosts": "Publicaciones recientes",
+    "popularReads": "Lecturas populares",
+    "trending": "Tendencias este mes",
+    "readMore": "Leer más",
+    "minRead": "min de lectura",
+    "allCategories": "Todos",
+    "viewAll": "Ver todo"
+  },
+  "article": {
+    "tableOfContents": "Tabla de contenidos",
+    "consultation": "¿Considerando este procedimiento?",
+    "consultationDesc": "Obtén asesoramiento personalizado del Dr. Yongwoo Lee en VIP Plastic Surgery en Seúl.",
+    "bookFree": "Reservar consulta gratuita",
+    "aboutAuthor": "Acerca del autor",
+    "relatedPosts": "Artículos relacionados",
+    "disclaimer": "Este artículo es solo para fines informativos y no constituye asesoramiento médico. Siempre consulte con un profesional médico calificado antes de tomar cualquier decisión sobre procedimientos quirúrgicos o no quirúrgicos.",
+    "writtenBy": "Escrito por",
+    "published": "Publicado",
+    "updated": "Actualizado"
+  },
+  "about": {
+    "title": "Dr. Yongwoo Lee",
+    "role": "Cirujano plástico certificado",
+    "clinic": "VIP Plastic Surgery",
+    "education": "Educación",
+    "training": "Entrenamiento y carrera",
+    "specialties": "Especialidades",
+    "memberships": "Membresías profesionales",
+    "bookConsultation": "Reservar una consulta",
+    "ctaTitle": "¿Listo para comenzar tu viaje?",
+    "ctaDesc": "Programa una consulta personalizada con el Dr. Yongwoo Lee para discutir tus objetivos y explorar las mejores opciones para ti."
+  },
+  "footer": {
+    "description": "Perspectivas de cirugía plástica basadas en evidencia de Seúl, Corea del Sur.",
+    "quickLinks": "Enlaces rápidos",
+    "legal": "Legal",
+    "privacy": "Política de privacidad",
+    "terms": "Términos de uso",
+    "disclaimer": "Aviso médico",
+    "rights": "Todos los derechos reservados."
+  },
+  "newsletter": {
+    "title": "Manténte informado",
+    "description": "Obtén las últimas perspectivas de cirugía plástica y consejos de recuperación entregados a tu bandeja de entrada.",
+    "placeholder": "Ingresa tu correo electrónico",
+    "subscribe": "Suscribirse",
+    "privacy": "Respetamos tu privacidad. Cancela la suscripción en cualquier momento."
+  }
+}

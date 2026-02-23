@@ -1,0 +1,40 @@
+<svg viewBox="0 0 1200 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0EB;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EDE7E0;stop-opacity:1" />
+    </linearGradient>
+    <style>
+      .title { font-family: Georgia, serif; font-size: 64px; font-weight: bold; fill: #2C2420; }
+      .accent { font-family: 'Trebuchet MS', sans-serif; font-size: 18px; fill: #8B7355; }
+    </style>
+  </defs>
+  
+  <!-- Gradient background -->
+  <rect width="1200" height="600" fill="url(#bgGradient5)"/>
+  
+  <!-- Decorative accent bars -->
+  <rect x="0" y="0" width="1200" height="4" fill="#B87A5E"/>
+  <rect x="0" y="596" width="1200" height="4" fill="#8B7355"/>
+  
+  <!-- Shield with checkmark icon -->
+  <g transform="translate(160, 110)">
+    <!-- Shield -->
+    <path d="M 80 20 L 120 40 L 120 110 Q 80 130 80 130 Q 40 130 40 110 L 40 40 Z" 
+          fill="#D4C8BA" stroke="#8B7355" stroke-width="2" stroke-linejoin="round"/>
+    <!-- Checkmark -->
+    <path d="M 55 85 L 70 100 L 105 60" 
+          stroke="#B87A5E" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Content area -->
+  <g>
+    <text x="600" y="260" text-anchor="middle" class="title">Choosing a Surgeon</text>
+    <text x="600" y="320" text-anchor="middle" class="accent">Red Flags & Best Practices</text>
+    
+    <!-- Decorative elements -->
+    <circle cx="200" cy="450" r="4" fill="#8B7355"/>
+    <circle cx="1000" cy="500" r="3" fill="#B87A5E"/>
+    <circle cx="150" cy="540" r="2" fill="#D4C8BA"/>
+  </g>
+</svg>

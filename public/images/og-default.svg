@@ -1,0 +1,31 @@
+<svg viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: Georgia, serif; font-size: 72px; font-weight: bold; fill: #2C2420; }
+      .subtitle { font-family: 'Trebuchet MS', sans-serif; font-size: 24px; fill: #8B7355; }
+      .footer-text { font-family: 'Trebuchet MS', sans-serif; font-size: 16px; fill: white; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F5F0EB"/>
+  
+  <!-- Subtle accent lines -->
+  <line x1="0" y1="100" x2="1200" y2="100" stroke="#EDE7E0" stroke-width="2"/>
+  <line x1="0" y1="530" x2="1200" y2="530" stroke="#D4C8BA" stroke-width="2"/>
+  
+  <!-- Main content area -->
+  <g>
+    <!-- Title -->
+    <text x="600" y="280" text-anchor="middle" class="title">Plastic Love</text>
+    
+    <!-- Subtitle -->
+    <text x="600" y="340" text-anchor="middle" class="subtitle">Trusted Plastic Surgery Insights from Seoul</text>
+  </g>
+  
+  <!-- Bottom accent strip -->
+  <rect x="0" y="530" width="1200" height="100" fill="#8B7355"/>
+  
+  <!-- Bottom text -->
+  <text x="600" y="590" text-anchor="middle" class="footer-text">Expert Guidance • Medical Excellence • Your Journey</text>
+</svg>

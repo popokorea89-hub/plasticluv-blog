@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Upload Dr. Lee Profile Photo</title>
+<style>
+body { font-family: Inter, sans-serif; background: #F5F0EB; color: #2C2420; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.card { background: white; border-radius: 20px; padding: 40px; max-width: 500px; text-align: center; box-shadow: 0 4px 20px rgba(44,36,32,.08); }
+h2 { font-family: Georgia, serif; margin-bottom: 8px; }
+p { color: #6B5E54; font-size: 14px; margin-bottom: 24px; }
+input[type=file] { display: none; }
+label { display: inline-block; padding: 12px 32px; background: #B87A5E; color: white; border-radius: 100px; cursor: pointer; font-size: 14px; font-weight: 500; }
+label:hover { background: #A66B50; }
+.preview { margin-top: 20px; }
+.preview img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; object-position: top; }
+.done { display: none; margin-top: 16px; padding: 12px 32px; background: #2C2420; color: white; border: none; border-radius: 100px; cursor: pointer; font-size: 14px; }
+.path { margin-top: 12px; font-size: 12px; color: #9B8E82; background: #EDE7E0; padding: 8px 16px; border-radius: 8px; word-break: break-all; }
+</style>
+</head>
+<body>
+<div class="card">
+<h2>Profile Photo</h2>
+<p>Dr. Yongwoo Lee's profile photo for Plastic Love blog</p>
+<label for="photo">Choose Photo</label>
+<input type="file" id="photo" accept="image/*" onchange="preview(this)">
+<div class="preview" id="prev"></div>
+<button class="done" id="doneBtn" onclick="save()">Save to Project</button>
+<div class="path" style="display:none" id="pathInfo">
+Save path: <code>plasticluv-blog/public/images/dr-yongwoo-lee.jpg</code>
+</div>
+</div>
+<script>
+function preview(input) {
+  if (input.files && input.files[0]) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      document.getElementById('prev').innerHTML = '<img src="' + e.target.result + '">';
+      document.getElementById('doneBtn').style.display = 'inline-block';
+      document.getElementById('pathInfo').style.display = 'block';
+      window._imgData = e.target.result;
+    };
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+function save() {
+  // Send to server endpoint
+  fetch('/api/upload-photo', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({image: window._imgData})
+  }).then(r => r.json()).then(d => {
+    document.getElementById('doneBtn').textContent = 'Saved!';
+    document.getElementById('doneBtn').style.background = '#8B7355';
+  });
+}
+</script>
+</body>
+</html>

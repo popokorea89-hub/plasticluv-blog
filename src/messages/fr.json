@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "blog": "Blog",
+    "procedures": "Procédures",
+    "recovery": "Récupération",
+    "about": "À propos",
+    "bookConsultation": "Réserver une consultation",
+    "search": "Chercher des articles...",
+    "searchHint": "Populaire: Rhinoplastie, Chirurgie des paupières, Comblement, Récupération"
+  },
+  "home": {
+    "badge": "PLASTIC LOVE",
+    "title": "Les réponses que vous méritez avant de décider",
+    "subtitle": "Le guide honnête d'un chirurgien certifié — sans pression, sans discours commercial, juste la vérité.",
+    "featured": "En vedette",
+    "recentPosts": "Articles récents",
+    "popularReads": "Lectures populaires",
+    "trending": "Tendances du mois",
+    "readMore": "Lire la suite",
+    "minRead": "min de lecture",
+    "allCategories": "Tous",
+    "viewAll": "Voir tout"
+  },
+  "article": {
+    "tableOfContents": "Table des matières",
+    "consultation": "Envisagez-vous cette procédure?",
+    "consultationDesc": "Obtenez des conseils personnalisés du Dr. Yongwoo Lee à VIP Plastic Surgery à Séoul.",
+    "bookFree": "Réserver une consultation gratuite",
+    "aboutAuthor": "À propos de l'auteur",
+    "relatedPosts": "Articles connexes",
+    "disclaimer": "Cet article est à titre informatif uniquement et ne constitue pas un avis médical. Consultez toujours un professionnel de la santé qualifié avant de prendre toute décision concernant les procédures chirurgicales ou non chirurgicales.",
+    "writtenBy": "Écrit par",
+    "published": "Publié",
+    "updated": "Mis à jour"
+  },
+  "about": {
+    "title": "Dr. Yongwoo Lee",
+    "role": "Chirurgien plasticien certifié",
+    "clinic": "VIP Plastic Surgery",
+    "education": "Formation",
+    "training": "Formation et carrière",
+    "specialties": "Spécialités",
+    "memberships": "Adhésions professionnelles",
+    "bookConsultation": "Réserver une consultation",
+    "ctaTitle": "Prêt à commencer votre parcours?",
+    "ctaDesc": "Planifiez une consultation personnalisée avec le Dr. Yongwoo Lee pour discuter de vos objectifs et explorer les meilleures options pour vous."
+  },
+  "footer": {
+    "description": "Insights en chirurgie plastique basés sur les preuves de Séoul, Corée du Sud.",
+    "quickLinks": "Liens rapides",
+    "legal": "Mentions légales",
+    "privacy": "Politique de confidentialité",
+    "terms": "Conditions d'utilisation",
+    "disclaimer": "Avertissement médical",
+    "rights": "Tous les droits réservés."
+  },
+  "newsletter": {
+    "title": "Restez informé",
+    "description": "Recevez les derniers insights en chirurgie plastique et conseils de récupération dans votre boîte de réception.",
+    "placeholder": "Entrez votre email",
+    "subscribe": "S'abonner",
+    "privacy": "Nous respectons votre vie privée. Vous pouvez vous désabonner à tout moment."
+  }
+}

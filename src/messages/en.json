@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "blog": "Blog",
+    "procedures": "Procedures",
+    "recovery": "Recovery",
+    "about": "About",
+    "bookConsultation": "Book Consultation",
+    "search": "Search articles...",
+    "searchHint": "Popular: Rhinoplasty, Eyelid Surgery, Fillers, Recovery"
+  },
+  "home": {
+    "badge": "PLASTIC LOVE",
+    "title": "The Answers You Deserve Before You Decide",
+    "subtitle": "A board-certified plastic surgeon's honest guide — no pressure, no sales pitch, just the truth about your options.",
+    "featured": "Featured",
+    "recentPosts": "Recent Posts",
+    "popularReads": "Popular Reads",
+    "trending": "Trending This Month",
+    "readMore": "Read more",
+    "minRead": "min read",
+    "allCategories": "All",
+    "viewAll": "View all"
+  },
+  "article": {
+    "tableOfContents": "Table of Contents",
+    "consultation": "Considering this procedure?",
+    "consultationDesc": "Get personalized advice from Dr. Yongwoo Lee at VIP Plastic Surgery in Seoul.",
+    "bookFree": "Book Free Consultation",
+    "aboutAuthor": "About the Author",
+    "relatedPosts": "Related Articles",
+    "disclaimer": "This article is for informational purposes only and does not constitute medical advice. Always consult with a qualified medical professional before making any decisions about surgical or non-surgical procedures.",
+    "writtenBy": "Written by",
+    "published": "Published",
+    "updated": "Updated"
+  },
+  "about": {
+    "title": "Dr. Yongwoo Lee",
+    "role": "Board-Certified Plastic Surgeon",
+    "clinic": "VIP Plastic Surgery",
+    "education": "Education",
+    "training": "Training & Career",
+    "specialties": "Specialties",
+    "memberships": "Professional Memberships",
+    "bookConsultation": "Book a Consultation",
+    "ctaTitle": "Ready to Begin Your Journey?",
+    "ctaDesc": "Schedule a personalized consultation with Dr. Yongwoo Lee to discuss your goals and explore the best options for you."
+  },
+  "footer": {
+    "description": "Evidence-based plastic surgery insights from Seoul, South Korea.",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "disclaimer": "Medical Disclaimer",
+    "rights": "All rights reserved."
+  },
+  "newsletter": {
+    "title": "Stay Informed",
+    "description": "Get the latest plastic surgery insights and recovery tips delivered to your inbox.",
+    "placeholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "privacy": "We respect your privacy. Unsubscribe at any time."
+  }
+}

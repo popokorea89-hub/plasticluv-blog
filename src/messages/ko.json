@@ -1,0 +1,64 @@
+{
+  "nav": {
+    "blog": "블로그",
+    "procedures": "시술 정보",
+    "recovery": "회복 가이드",
+    "about": "소개",
+    "bookConsultation": "상담 예약",
+    "search": "글 검색...",
+    "searchHint": "인기: 코성형, 눈성형, 필러, 회복"
+  },
+  "home": {
+    "badge": "PLASTIC LOVE",
+    "title": "결정하기 전에, 알아야 할 것들",
+    "subtitle": "성형외과 전문의가 상담실에서 직접 전하는 솔직한 이야기 — 영업 없이, 진심만.",
+    "featured": "추천",
+    "recentPosts": "최신 글",
+    "popularReads": "인기 글",
+    "trending": "이달의 트렌드",
+    "readMore": "더 읽기",
+    "minRead": "분 소요",
+    "allCategories": "전체",
+    "viewAll": "전체 보기"
+  },
+  "article": {
+    "tableOfContents": "목차",
+    "consultation": "이 시술을 고려하고 계신가요?",
+    "consultationDesc": "서울 VIP 성형외과 이용우 원장에게 맞춤 상담을 받아보세요.",
+    "bookFree": "무료 상담 예약",
+    "aboutAuthor": "저자 소개",
+    "relatedPosts": "관련 글",
+    "disclaimer": "이 글은 정보 제공 목적으로만 작성되었으며 의학적 조언을 구성하지 않습니다. 수술 또는 비수술 시술에 대한 결정을 내리기 전에 항상 자격을 갖춘 의료 전문가와 상담하십시오.",
+    "writtenBy": "작성자",
+    "published": "게시일",
+    "updated": "수정일"
+  },
+  "about": {
+    "title": "이용우 원장",
+    "role": "성형외과 전문의",
+    "clinic": "VIP 성형외과",
+    "education": "학력",
+    "training": "경력",
+    "specialties": "전문 분야",
+    "memberships": "학회 활동",
+    "bookConsultation": "상담 예약하기",
+    "ctaTitle": "새로운 시작을 준비하세요",
+    "ctaDesc": "이용우 원장과 맞춤 상담을 통해 목표를 논의하고 최적의 방법을 찾아보세요."
+  },
+  "footer": {
+    "description": "서울에서 전하는 근거 중심 성형외과 정보.",
+    "quickLinks": "바로가기",
+    "legal": "법적 고지",
+    "privacy": "개인정보처리방침",
+    "terms": "이용약관",
+    "disclaimer": "의학적 고지",
+    "rights": "모든 권리 보유."
+  },
+  "newsletter": {
+    "title": "최신 정보 받기",
+    "description": "최신 성형 정보와 회복 팁을 이메일로 받아보세요.",
+    "placeholder": "이메일 입력",
+    "subscribe": "구독하기",
+    "privacy": "개인정보를 존중합니다. 언제든지 구독을 취소할 수 있습니다."
+  }
+}
