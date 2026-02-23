@@ -24,11 +24,15 @@ export default async function LangLayout({
   const messages = await getMessages();
   const posts = getAllPostsMeta(locale);
 
+  const dir = isRtl(locale) ? "rtl" : "ltr";
+
   return (
-    <NextIntlClientProvider messages={messages}>
-      <Navbar lang={locale} posts={posts} />
-      <main className="min-h-screen">{children}</main>
-      <Footer lang={locale} />
-    </NextIntlClientProvider>
+    <div lang={locale} dir={dir}>
+      <NextIntlClientProvider messages={messages}>
+        <Navbar lang={locale} posts={posts} />
+        <main className="min-h-screen">{children}</main>
+        <Footer lang={locale} />
+      </NextIntlClientProvider>
+    </div>
   );
 }

@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: `${t("title")} — Board-Certified Plastic Surgeon in Seoul`,
     description:
-      "Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery. University of Michigan graduate and ISAPS member specializing in anti-aging and eye surgery.",
+      "Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery. University of Michigan — Ann Arbor graduate and ISAPS member specializing in anti-aging and eye surgery.",
     alternates: {
       canonical: `https://plasticluv.com/${lang}/about`,
       languages: alternates,
@@ -25,10 +25,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 const training = [
   { role: "Plastic Surgeon", place: "VIP Plastic Surgery", year: "Present", current: true },
-  { role: "Clinical Professor", place: "Pusan National University Hospital (PNUH)", year: "" },
-  { role: "Fellowship", place: "PNUH Plastic Surgery", year: "" },
+  { role: "Clinical Professor", place: "Pusan National University Hospital", year: "" },
+  { role: "Fellowship", place: "Pusan National University Hospital, Plastic Surgery", year: "" },
   { role: "Board Certified", place: "Korean Board of Plastic Surgery", year: "" },
-  { role: "Resident", place: "PNUH Plastic Surgery", year: "" },
+  { role: "Resident", place: "Pusan National University Hospital, Plastic Surgery", year: "" },
   { role: "Intern", place: "Pusan National University Hospital", year: "" },
 ];
 
@@ -121,24 +121,16 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
             <div className="text-sub text-base leading-relaxed space-y-4 mb-8">
               <p>
-                Dr. Yongwoo Lee is a board-certified plastic surgeon currently practicing at VIP Plastic Surgery, South Korea. He brings a unique international perspective to aesthetic medicine, having studied Brain, Behavior and Cognitive Science at the University of Michigan before pursuing his medical degree at Pusan National University College of Medicine.
+                Dr. Yongwoo Lee is a board-certified plastic surgeon currently practicing at VIP Plastic Surgery, South Korea. He brings a unique international perspective to aesthetic medicine, having studied Brain, Behavior and Cognitive Science at the University of Michigan — Ann Arbor before pursuing his medical degree at Pusan National University, College of Medicine.
               </p>
               <p>
-                His extensive training at Pusan National University Hospital (PNUH) — from internship through residency, fellowship, and a clinical professorship — has given him deep expertise in both reconstructive and aesthetic plastic surgery. He specializes in anti-aging procedures, including upper and lower blepharoplasty, as well as non-surgical treatments such as Botox, dermal fillers, thread lifting, and laser therapy.
+                His extensive training at Pusan National University Hospital — from internship through residency, fellowship, and a clinical professorship — has given him deep expertise in both reconstructive and aesthetic plastic surgery. He specializes in anti-aging procedures, including upper and lower blepharoplasty, as well as non-surgical treatments such as Botox, dermal fillers, thread lifting, and laser therapy.
               </p>
               <p>
                 As a member of the International Society of Aesthetic Plastic Surgery (ISAPS) and several Korean professional societies, Dr. Yongwoo Lee stays at the forefront of global aesthetic surgery advances. Through Plastic Love — born from a genuine love for the craft of plastic surgery — he shares evidence-based insights to help patients worldwide make informed decisions about their care.
               </p>
             </div>
 
-            <a
-              href="https://www.vippskorea.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center px-6 py-3 bg-cta text-white text-sm font-medium rounded-full hover:bg-cta-hover hover:-translate-y-0.5 transition-all"
-            >
-              {t("bookConsultation")}
-            </a>
           </div>
         </section>
 
@@ -151,7 +143,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 UM
               </div>
               <div>
-                <h4 className="font-semibold text-text">University of Michigan</h4>
+                <h4 className="font-semibold text-text">University of Michigan — Ann Arbor</h4>
                 <p className="text-sub text-sm">Bachelor of Science, Brain, Behavior and Cognitive Science</p>
               </div>
             </div>
@@ -160,7 +152,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 PNU
               </div>
               <div>
-                <h4 className="font-semibold text-text">Pusan National University College of Medicine</h4>
+                <h4 className="font-semibold text-text">Pusan National University, College of Medicine</h4>
                 <p className="text-sub text-sm">Master of Medicine (MM)</p>
               </div>
             </div>

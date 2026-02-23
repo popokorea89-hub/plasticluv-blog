@@ -108,6 +108,25 @@ body {
   margin: 2rem 0;
 }
 
+/* Language-specific fonts */
+:lang(ko) {
+  --font-display: "Noto Serif KR", serif;
+  --font-body: "Noto Sans KR", sans-serif;
+}
+:lang(ja) {
+  --font-display: "Noto Serif JP", serif;
+  --font-body: "Noto Sans JP", sans-serif;
+}
+:lang(zh) {
+  --font-display: "Noto Serif SC", serif;
+  --font-body: "Noto Sans SC", sans-serif;
+}
+:lang(ar) {
+  --font-display: "Amiri", serif;
+  --font-body: "Noto Sans Arabic", sans-serif;
+  direction: rtl;
+}
+
 /* Animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }

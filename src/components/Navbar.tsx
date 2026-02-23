@@ -1,21 +1,18 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n-routing";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SearchOverlay from "./SearchOverlay";
 import type { Locale } from "@/lib/i18n";
 import type { BlogPostMeta } from "@/types/blog";
-import { categoryConfig, type Category } from "@/types/blog";
-import NextLink from "next/link";
 
 export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostMeta[] }) {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [browseOpen, setBrowseOpen] = useState(false);
-  const browseRef = useRef<HTMLDivElement>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -31,35 +28,12 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
       }
       if (e.key === "Escape") {
         setSearchOpen(false);
-        setBrowseOpen(false);
+        setMobileOpen(false);
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
-
-  // Close browse when clicking outside
-  useEffect(() => {
-    const onClick = (e: MouseEvent) => {
-      if (browseRef.current && !browseRef.current.contains(e.target as Node)) {
-        setBrowseOpen(false);
-      }
-    };
-    if (browseOpen) {
-      document.addEventListener("mousedown", onClick);
-      return () => document.removeEventListener("mousedown", onClick);
-    }
-  }, [browseOpen]);
-
-  // Group posts by category (exclude "all")
-  const grouped = Object.keys(categoryConfig)
-    .filter((k) => k !== "all")
-    .map((key) => ({
-      key: key as Category,
-      label: categoryConfig[key as Category].label,
-      posts: posts.filter((p) => p.category === key),
-    }))
-    .filter((g) => g.posts.length > 0);
 
   return (
     <>
@@ -78,54 +52,20 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
 
           {/* Right Side */}
           <div className="flex items-center gap-5">
-            {/* Articles Dropdown */}
-            <div className="relative hidden md:block" ref={browseRef}>
-              <button
-                onClick={() => setBrowseOpen(!browseOpen)}
-                className="text-sm font-medium text-sub hover:text-text transition-colors flex items-center gap-1"
-              >
-                Articles
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  className={`transition-transform duration-200 ${browseOpen ? "rotate-180" : ""}`}
-                >
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </button>
+            {/* Desktop Links */}
+            <Link
+              href="/"
+              className="hidden md:block text-sm font-medium text-sub hover:text-text transition-colors"
+            >
+              Blog
+            </Link>
 
-              {/* Dropdown Panel */}
-              {browseOpen && (
-                <div className="absolute right-0 top-full mt-3 w-[600px] max-h-[70vh] overflow-y-auto bg-bg border border-border rounded-xl shadow-lg p-5 animate-fade-up">
-                  {grouped.map((group) => (
-                    <div key={group.key} className="mb-5 last:mb-0">
-                      <h3 className="text-xs uppercase tracking-wider text-accent font-semibold mb-2 px-1">
-                        {group.label}
-                      </h3>
-                      <div className="grid grid-cols-1 gap-1">
-                        {group.posts.map((post) => (
-                          <NextLink
-                            key={post.slug}
-                            href={`/${lang}/blog/${post.slug}`}
-                            onClick={() => setBrowseOpen(false)}
-                            className="block px-3 py-2 rounded-lg text-sm text-text hover:bg-bg-2 transition-colors leading-snug"
-                          >
-                            {post.title}
-                          </NextLink>
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                  {grouped.length === 0 && (
-                    <p className="text-sm text-muted text-center py-4">No posts yet.</p>
-                  )}
-                </div>
-              )}
-            </div>
+            <Link
+              href="/articles"
+              className="hidden md:block text-sm font-medium text-sub hover:text-text transition-colors"
+            >
+              Articles
+            </Link>
 
             <Link
               href="/about"
@@ -158,8 +98,40 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
             >
               {t("bookConsultation")}
             </a>
+
+            {/* Mobile Hamburger */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="md:hidden w-9 h-9 rounded-full bg-bg-2 flex items-center justify-center hover:bg-border transition-colors"
+              aria-label="Menu"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+                {mobileOpen ? (
+                  <><path d="M18 6L6 18" /><path d="M6 6l12 12" /></>
+                ) : (
+                  <><path d="M3 12h18" /><path d="M3 6h18" /><path d="M3 18h18" /></>
+                )}
+              </svg>
+            </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileOpen && (
+          <div className="md:hidden border-t border-border bg-bg/95 backdrop-blur-xl px-6 py-4 space-y-3 animate-fade-up">
+            <Link href="/" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">Blog</Link>
+            <Link href="/articles" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">Articles</Link>
+            <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">About</Link>
+            <a
+              href="https://www.vippskorea.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center bg-cta text-white text-sm font-medium py-2.5 rounded-full hover:bg-cta-hover transition-colors"
+            >
+              {t("bookConsultation")}
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* Spacer for fixed nav */}

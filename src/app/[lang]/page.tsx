@@ -49,8 +49,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       {/* Hero */}
       <section className="text-center py-16 md:py-20 animate-fade-up">
-        <p className="text-sm text-accent font-medium tracking-wide mb-3 italic">{t("subtitle")}</p>
-        <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-text leading-tight">
+        <p className="text-lg md:text-xl text-accent font-medium mb-4 italic tracking-tight">
+          {t("subtitle")}
+        </p>
+        <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-text leading-tight">
           {t("title")}
         </h1>
       </section>
@@ -93,7 +95,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </span>
             <span className="flex items-center gap-1.5 text-xs text-sub">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              University of Michigan
+              University of Michigan — Ann Arbor
             </span>
             <span className="flex items-center gap-1.5 text-xs text-sub">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>

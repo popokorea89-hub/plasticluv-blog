@@ -119,7 +119,7 @@ export default async function ArticlePage({
             <span>&middot;</span>
             <span>{post.date}</span>
             <span>&middot;</span>
-            <span>{post.readTime} min read</span>
+            <span>{typeof post.readTime === "number" ? `${post.readTime} min read` : post.readTime}</span>
           </div>
         </header>
 
@@ -144,7 +144,7 @@ export default async function ArticlePage({
         </div>
 
         {/* Article Layout: Content + Sidebar */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 max-w-[1100px] mx-auto mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10 max-w-[1200px] mx-auto mb-16">
           {/* Main Content */}
           <article className="prose max-w-none">
             <MDXRemote source={post.content} />
@@ -191,7 +191,7 @@ export default async function ArticlePage({
                   </div>
                 </div>
                 <p className="text-xs text-sub leading-relaxed">
-                  Plastic surgeon at VIP Plastic Surgery. University of Michigan &amp; Pusan National University College of Medicine.
+                  Plastic surgeon at VIP Plastic Surgery. University of Michigan — Ann Arbor &amp; Pusan National University, College of Medicine.
                 </p>
               </div>
 
