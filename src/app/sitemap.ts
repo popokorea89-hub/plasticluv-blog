@@ -34,6 +34,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Articles pages
+  for (const lang of locales) {
+    entries.push({
+      url: `${SITE_URL}/${lang}/articles`,
+      lastModified: new Date(),
+      changeFrequency: "weekly",
+      priority: 0.8,
+      alternates: {
+        languages: Object.fromEntries(locales.map((l) => [l, `${SITE_URL}/${l}/articles`])),
+      },
+    });
+  }
+
   // Blog posts
   for (const slug of slugs) {
     for (const lang of locales) {
