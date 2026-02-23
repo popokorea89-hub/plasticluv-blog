@@ -45,24 +45,22 @@ export default function Navbar({ lang }: { lang: Locale }) {
             Plastic Love
           </Link>
 
-          {/* Center Nav Links */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Right Side */}
+          <div className="flex items-center gap-5">
+            {/* Nav Links */}
             <Link
               href="/"
-              className="text-sm font-medium text-sub hover:text-text transition-colors"
+              className="hidden md:block text-sm font-medium text-sub hover:text-text transition-colors"
             >
               {t("blog")}
             </Link>
             <Link
               href="/about"
-              className="text-sm font-medium text-sub hover:text-text transition-colors"
+              className="hidden md:block text-sm font-medium text-sub hover:text-text transition-colors"
             >
               {t("about")}
             </Link>
-          </div>
 
-          {/* Right Side */}
-          <div className="flex items-center gap-3">
             {/* Search Button */}
             <button
               onClick={() => setSearchOpen(true)}
