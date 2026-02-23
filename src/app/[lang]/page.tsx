@@ -49,13 +49,10 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
 
       {/* Hero */}
       <section className="text-center py-16 md:py-20 animate-fade-up">
-        <span className="inline-block text-xs uppercase tracking-[0.15em] text-accent font-semibold mb-4 px-4 py-1.5 bg-bg-2 rounded-full">
-          {t("badge")}
-        </span>
-        <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-text leading-tight mb-4">
+        <p className="text-sm text-accent font-medium tracking-wide mb-3 italic">{t("subtitle")}</p>
+        <h1 className="font-[family-name:var(--font-display)] text-4xl md:text-5xl text-text leading-tight">
           {t("title")}
         </h1>
-        <p className="text-sub text-base max-w-lg mx-auto">{t("subtitle")}</p>
       </section>
 
       {/* Category Filter + All Post Sections */}
