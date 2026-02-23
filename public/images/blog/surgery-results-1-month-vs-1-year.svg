@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F5F0EB"/>
+
+  <!-- Main timeline arrow -->
+  <g>
+    <!-- Arrow line -->
+    <line x1="100" y1="250" x2="700" y2="250" stroke="#2C2420" stroke-width="2.5"/>
+    <!-- Arrow head -->
+    <polygon points="700,250 680,240 680,260" fill="#2C2420"/>
+
+    <!-- Timeline markers and labels area -->
+    <!-- 1 Month marker -->
+    <circle cx="200" cy="250" r="6" fill="#2C2420"/>
+    <line x1="200" y1="260" x2="200" y2="280" stroke="#2C2420" stroke-width="1.5"/>
+
+    <!-- 3 Month marker -->
+    <circle cx="380" cy="250" r="5" fill="#8B7355"/>
+    <line x1="380" y1="260" x2="380" y2="280" stroke="#8B7355" stroke-width="1.5"/>
+
+    <!-- 6 Month marker -->
+    <circle cx="540" cy="250" r="5" fill="#8B7355"/>
+    <line x1="540" y1="260" x2="540" y2="280" stroke="#8B7355" stroke-width="1.5"/>
+
+    <!-- 1 Year marker -->
+    <circle cx="700" cy="250" r="6" fill="#2C2420"/>
+    <line x1="700" y1="260" x2="700" y2="280" stroke="#2C2420" stroke-width="1.5"/>
+  </g>
+
+  <!-- Early phase: Wavy/rough lines (swelling, imperfection) -->
+  <g transform="translate(200, 100)">
+    <!-- Rough wavy lines representing skin/contour -->
+    <path d="M 0 0 Q 5 8 10 5 Q 15 2 20 8 Q 25 12 30 8 Q 35 4 40 10 Q 45 14 50 8" fill="none" stroke="#2C2420" stroke-width="2.5" opacity="0.8"/>
+    <path d="M 0 20 Q 5 25 10 20 Q 15 18 20 25 Q 25 28 30 24 Q 35 20 40 26 Q 45 30 50 24" fill="none" stroke="#2C2420" stroke-width="2" opacity="0.7"/>
+    <path d="M 0 40 Q 5 42 10 38 Q 15 36 20 42 Q 25 45 30 41 Q 35 38 40 44 Q 45 48 50 42" fill="none" stroke="#8B7355" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Swelling indicators (puffier outline) -->
+    <ellipse cx="25" cy="25" rx="35" ry="45" fill="none" stroke="#D4C5B5" stroke-width="1.5" opacity="0.5" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- Transition phase: Gradually smoothing -->
+  <g transform="translate(450, 100)">
+    <!-- Moderately smooth lines -->
+    <path d="M 0 5 Q 10 8 20 5 Q 30 3 40 6 Q 50 8 60 5" fill="none" stroke="#2C2420" stroke-width="2.5" opacity="0.8"/>
+    <path d="M 0 25 Q 10 28 20 25 Q 30 23 40 26 Q 50 28 60 25" fill="none" stroke="#2C2420" stroke-width="2" opacity="0.7"/>
+    <path d="M 0 45 Q 10 46 20 44 Q 30 42 40 45 Q 50 47 60 44" fill="none" stroke="#8B7355" stroke-width="1.5" opacity="0.6"/>
+
+    <!-- Outline becoming more defined -->
+    <ellipse cx="30" cy="27" rx="35" ry="45" fill="none" stroke="#D4C5B5" stroke-width="1.5" opacity="0.3" stroke-dasharray="3,3"/>
+  </g>
+
+  <!-- Final result: Clean, smooth lines -->
+  <g transform="translate(150, 350)">
+    <!-- Smooth, clean lines representing final result -->
+    <path d="M 0 0 L 50 2 L 100 0" fill="none" stroke="#2C2420" stroke-width="2.5" opacity="0.9" stroke-linecap="round"/>
+    <path d="M 0 20 L 50 21 L 100 20" fill="none" stroke="#2C2420" stroke-width="2" opacity="0.8" stroke-linecap="round"/>
+    <path d="M 0 40 L 50 41 L 100 40" fill="none" stroke="#8B7355" stroke-width="1.5" opacity="0.7" stroke-linecap="round"/>
+
+    <!-- Clean outline -->
+    <ellipse cx="50" cy="20" rx="35" ry="45" fill="none" stroke="#D4C5B5" stroke-width="1" opacity="0.2"/>
+  </g>
+
+  <!-- Progression indicator: Arrow showing improvement -->
+  <g transform="translate(320, 150)">
+    <path d="M 0 0 L 20 -15" stroke="#8B7355" stroke-width="2" fill="none" opacity="0.6"/>
+    <polygon points="20,-15 15,-10 18,-22" fill="#8B7355" opacity="0.6"/>
+  </g>
+
+  <!-- Decorative accent circles at timeline points -->
+  <g opacity="0.2">
+    <circle cx="200" cy="250" r="20" fill="none" stroke="#8B7355" stroke-width="1"/>
+    <circle cx="700" cy="250" r="20" fill="none" stroke="#8B7355" stroke-width="1"/>
+  </g>
+</svg>

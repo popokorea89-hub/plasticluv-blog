@@ -1,0 +1,67 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F5F0EB"/>
+
+  <!-- Central face outline -->
+  <g transform="translate(400, 250)">
+    <!-- Main face shape -->
+    <ellipse cx="0" cy="0" rx="80" ry="110" fill="none" stroke="#2C2420" stroke-width="3"/>
+
+    <!-- Chin -->
+    <path d="M -50 110 Q 0 140 50 110" fill="none" stroke="#2C2420" stroke-width="3"/>
+
+    <!-- Forehead/top -->
+    <path d="M -70 -100 Q -75 -130 -30 -140 Q 30 -140 75 -130 Q 70 -100 50 -110" fill="none" stroke="#2C2420" stroke-width="2.5"/>
+
+    <!-- Golden Ratio - Horizontal thirds (face proportions) -->
+    <g stroke="#8B7355" stroke-width="1.5" opacity="0.7">
+      <!-- Upper third line -->
+      <line x1="-120" y1="-40" x2="120" y2="-40"/>
+      <!-- Middle third line (eyes level) -->
+      <line x1="-120" y1="30" x2="120" y2="30"/>
+      <!-- Lower third line (nose bottom) -->
+      <line x1="-120" y1="100" x2="120" y2="100"/>
+    </g>
+
+    <!-- Vertical center line -->
+    <line x1="0" y1="-140" x2="0" y2="140" stroke="#8B7355" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Vertical divisions (optional thirds) -->
+    <g stroke="#D4C5B5" stroke-width="1" opacity="0.5">
+      <line x1="-60" y1="-140" x2="-60" y2="140"/>
+      <line x1="60" y1="-140" x2="60" y2="140"/>
+    </g>
+
+    <!-- Eyes (positioned by golden ratio) -->
+    <circle cx="-30" cy="25" r="6" fill="none" stroke="#2C2420" stroke-width="2"/>
+    <circle cx="30" cy="25" r="6" fill="none" stroke="#2C2420" stroke-width="2"/>
+
+    <!-- Eyebrows (geometric) -->
+    <path d="M -45 10 Q -30 0 -15 5" fill="none" stroke="#2C2420" stroke-width="1.5"/>
+    <path d="M 15 5 Q 30 0 45 10" fill="none" stroke="#2C2420" stroke-width="1.5"/>
+
+    <!-- Nose (centered) -->
+    <path d="M 0 20 L -3 50 L 0 60 L 3 50" fill="none" stroke="#2C2420" stroke-width="1.5"/>
+
+    <!-- Lips (positioned by lower third) -->
+    <path d="M -15 90 Q 0 105 15 90" fill="none" stroke="#2C2420" stroke-width="1.5"/>
+    <path d="M -15 90 Q 0 100 15 90" fill="none" stroke="#2C2420" stroke-width="1" opacity="0.6"/>
+
+    <!-- Subtle accent points at key intersections -->
+    <circle cx="0" cy="30" r="1.5" fill="#8B7355" opacity="0.5"/>
+    <circle cx="-60" cy="0" r="1.5" fill="#8B7355" opacity="0.5"/>
+    <circle cx="60" cy="0" r="1.5" fill="#8B7355" opacity="0.5"/>
+
+    <!-- Angle guides (subtle geometric suggestions) -->
+    <g stroke="#D4C5B5" stroke-width="0.75" opacity="0.4" stroke-dasharray="2,2">
+      <path d="M -50 -110 L 50 50"/>
+      <path d="M 50 -110 L -50 50"/>
+    </g>
+  </g>
+
+  <!-- Decorative corner accents -->
+  <g opacity="0.25">
+    <line x1="60" y1="40" x2="80" y2="60" stroke="#8B7355" stroke-width="1"/>
+    <line x1="720" y1="440" x2="740" y2="460" stroke="#8B7355" stroke-width="1"/>
+  </g>
+</svg>

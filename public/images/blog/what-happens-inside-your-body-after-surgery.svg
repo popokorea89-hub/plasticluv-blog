@@ -1,0 +1,101 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F5F0EB"/>
+
+  <!-- Title space note: centered vertical arrangement -->
+  <!-- Phase 1: Hemostasis (blood clotting) - Droplet -->
+  <g transform="translate(150, 250)">
+    <!-- Circle container -->
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#2C2420" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="50" fill="#D4C5B5" opacity="0.08"/>
+
+    <!-- Droplet symbol -->
+    <path d="M 0 -15 Q -12 -5 -12 5 Q 0 20 0 25 Q 12 20 12 5 Q 12 -5 0 -15" fill="none" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Internal droplet lines showing activity -->
+    <line x1="-5" y1="0" x2="5" y2="0" stroke="#8B7355" stroke-width="1.5" opacity="0.6"/>
+    <circle cx="0" cy="8" r="2.5" fill="#8B7355" opacity="0.6"/>
+  </g>
+
+  <!-- Connecting line 1 -->
+  <g>
+    <line x1="205" y1="250" x2="285" y2="250" stroke="#2C2420" stroke-width="1.5"/>
+    <!-- Arrow head -->
+    <polygon points="285,250 270,242 270,258" fill="#2C2420"/>
+  </g>
+
+  <!-- Phase 2: Inflammation (immune response) - Shield -->
+  <g transform="translate(360, 250)">
+    <!-- Circle container -->
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#2C2420" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="50" fill="#D4C5B5" opacity="0.08"/>
+
+    <!-- Shield symbol -->
+    <path d="M -15 -15 L 0 -20 L 15 -15 L 15 5 Q 0 18 0 22 Q 0 18 -15 5 Z" fill="none" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Plus sign inside (medical/protection) -->
+    <line x1="0" y1="-8" x2="0" y2="8" stroke="#8B7355" stroke-width="1.5" opacity="0.6"/>
+    <line x1="-8" y1="0" x2="8" y2="0" stroke="#8B7355" stroke-width="1.5" opacity="0.6"/>
+  </g>
+
+  <!-- Connecting line 2 -->
+  <g>
+    <line x1="415" y1="250" x2="495" y2="250" stroke="#2C2420" stroke-width="1.5"/>
+    <!-- Arrow head -->
+    <polygon points="495,250 480,242 480,258" fill="#2C2420"/>
+  </g>
+
+  <!-- Phase 3: Proliferation (tissue building) - Spiral/Helix -->
+  <g transform="translate(570, 250)">
+    <!-- Circle container -->
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#2C2420" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="50" fill="#D4C5B5" opacity="0.08"/>
+
+    <!-- Spiral/helix symbol representing growth -->
+    <path d="M 0 -15 Q 8 -12 8 -2 Q 8 8 0 10 Q -8 8 -8 0 Q -8 -8 0 -10" fill="none" stroke="#8B7355" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 0 10 Q 6 12 6 18 Q 6 22 0 22 Q -6 22 -6 18 Q -6 12 0 14" fill="none" stroke="#8B7355" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- Connecting line 3 -->
+  <g>
+    <line x1="625" y1="250" x2="705" y2="250" stroke="#2C2420" stroke-width="1.5"/>
+    <!-- Arrow head -->
+    <polygon points="705,250 690,242 690,258" fill="#2C2420"/>
+  </g>
+
+  <!-- Phase 4: Remodeling (final strengthening) - Checkmark -->
+  <g transform="translate(780, 250)">
+    <!-- Circle container -->
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#2C2420" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="50" fill="#D4C5B5" opacity="0.08"/>
+
+    <!-- Checkmark symbol -->
+    <path d="M -12 2 L -2 10 L 15 -8" fill="none" stroke="#8B7355" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Decorative timeline indicators below -->
+  <g transform="translate(0, 360)">
+    <!-- Phase labels positioning indicators -->
+    <!-- Small circles showing phase sequence -->
+    <circle cx="150" cy="0" r="3" fill="#8B7355" opacity="0.5"/>
+    <circle cx="360" cy="0" r="3" fill="#8B7355" opacity="0.5"/>
+    <circle cx="570" cy="0" r="3" fill="#8B7355" opacity="0.5"/>
+    <circle cx="780" cy="0" r="3" fill="#8B7355" opacity="0.5"/>
+
+    <!-- Connecting line through all phases -->
+    <line x1="150" y1="0" x2="780" y2="0" stroke="#D4C5B5" stroke-width="1" opacity="0.4"/>
+  </g>
+
+  <!-- Decorative flowing lines suggesting movement/process -->
+  <g stroke="#D4C5B5" stroke-width="1.5" fill="none" opacity="0.25">
+    <path d="M 100 180 Q 200 150 300 180"/>
+    <path d="M 300 320 Q 400 350 500 320"/>
+    <path d="M 500 180 Q 600 150 700 180"/>
+  </g>
+
+  <!-- Small accent elements showing progression -->
+  <g opacity="0.3">
+    <line x1="50" y1="80" x2="70" y2="60" stroke="#8B7355" stroke-width="1"/>
+    <line x1="730" y1="440" x2="750" y2="420" stroke="#8B7355" stroke-width="1"/>
+  </g>
+</svg>

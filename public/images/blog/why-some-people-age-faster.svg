@@ -1,0 +1,60 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#F5F0EB"/>
+
+  <!-- Title grouping note: centered composition -->
+  <g transform="translate(400, 250)">
+    <!-- Innermost: Bone (solid) -->
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#2C2420" stroke-width="3"/>
+    <circle cx="0" cy="0" r="55" fill="#D4C5B5" opacity="0.15"/>
+
+    <!-- Second ring: Fat (dotted pattern) -->
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#2C2420" stroke-width="2.5" stroke-dasharray="4,4"/>
+
+    <!-- Third ring: Muscle (dashed) -->
+    <circle cx="0" cy="0" r="135" fill="none" stroke="#8B7355" stroke-width="2" stroke-dasharray="8,5"/>
+
+    <!-- Outermost: Skin (thin line) -->
+    <circle cx="0" cy="0" r="165" fill="none" stroke="#2C2420" stroke-width="1.5"/>
+
+    <!-- Direction arrows showing change/descent -->
+    <!-- Arrow pointing inward on right side -->
+    <g stroke="#8B7355" stroke-width="2" fill="none">
+      <line x1="170" y1="-20" x2="140" y2="-20"/>
+      <path d="M 140 -20 L 150 -15 M 140 -20 L 150 -25"/>
+    </g>
+
+    <!-- Arrow pointing inward on left side -->
+    <g stroke="#8B7355" stroke-width="2" fill="none">
+      <line x1="-170" y1="20" x2="-140" y2="20"/>
+      <path d="M -140 20 L -150 25 M -140 20 L -150 15"/>
+    </g>
+
+    <!-- Arrow pointing inward at top -->
+    <g stroke="#8B7355" stroke-width="2" fill="none">
+      <line x1="0" y1="-175" x2="0" y2="-145"/>
+      <path d="M 0 -145 L -5 -160 M 0 -145 L 5 -160"/>
+    </g>
+
+    <!-- Arrow pointing outward at bottom (loss) -->
+    <g stroke="#8B7355" stroke-width="2" fill="none">
+      <line x1="0" y1="175" x2="0" y2="145"/>
+      <path d="M 0 145 L -5 160 M 0 145 L 5 160"/>
+    </g>
+
+    <!-- Label markers (subtle points at key positions) -->
+    <circle cx="0" cy="0" r="3" fill="#2C2420"/>
+
+    <!-- Small accent circles at ring intersections -->
+    <circle cx="60" cy="0" r="2" fill="#8B7355" opacity="0.6"/>
+    <circle cx="-60" cy="0" r="2" fill="#8B7355" opacity="0.6"/>
+    <circle cx="0" cy="100" r="2" fill="#8B7355" opacity="0.6"/>
+    <circle cx="0" cy="-100" r="2" fill="#8B7355" opacity="0.6"/>
+  </g>
+
+  <!-- Decorative corner elements -->
+  <g opacity="0.3">
+    <circle cx="100" cy="80" r="12" fill="none" stroke="#D4C5B5" stroke-width="1"/>
+    <circle cx="700" cy="420" r="12" fill="none" stroke="#D4C5B5" stroke-width="1"/>
+  </g>
+</svg>
