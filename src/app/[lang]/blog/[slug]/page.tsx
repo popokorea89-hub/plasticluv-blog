@@ -113,7 +113,7 @@ export default async function ArticlePage({
           </h1>
           <div className="flex items-center justify-center gap-4 text-sm text-muted">
             <div className="flex items-center gap-2">
-              <img src="/images/dr-yongwoo-lee.jpg" alt="Dr. Yongwoo Lee" className="w-8 h-8 rounded-full object-cover object-top" />
+              <img src="/images/dr-lee-avatar-sm.jpg" alt="Dr. Yongwoo Lee" className="w-8 h-8 rounded-full object-cover object-top" />
               <span className="font-medium text-text">Dr. Yongwoo Lee</span>
             </div>
             <span>&middot;</span>
@@ -181,7 +181,7 @@ export default async function ArticlePage({
                 <h4 className="text-xs uppercase text-muted tracking-wider mb-3">{t("aboutAuthor")}</h4>
                 <div className="flex items-center gap-3 mb-3">
                   <img
-                    src="/images/dr-yongwoo-lee.jpg"
+                    src="/images/dr-lee-avatar-md.jpg"
                     alt="Dr. Yongwoo Lee"
                     className="w-10 h-10 rounded-full object-cover object-top"
                   />

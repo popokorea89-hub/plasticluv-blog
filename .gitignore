@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# large original images (use optimized web versions instead)
+public/images/dr-yongwoo-lee.jpg
+public/images/제목*

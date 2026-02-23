@@ -104,7 +104,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           {/* Photo */}
           <div className="md:sticky md:top-24">
             <img
-              src="/images/dr-yongwoo-lee.jpg"
+              src="/images/dr-yongwoo-lee-web.jpg"
               alt="Dr. Yongwoo Lee — Board-Certified Plastic Surgeon"
               className="w-full max-w-[360px] mx-auto rounded-2xl object-cover aspect-[3/4]"
               loading="eager"

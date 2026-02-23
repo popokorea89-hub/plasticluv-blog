@@ -39,7 +39,7 @@ export function getPostBySlug(slug: string, lang: string = "en"): BlogPost | nul
     author: {
       name: "Dr. Yongwoo Lee",
       role: "Board-Certified Plastic Surgeon",
-      image: "/images/dr-lee-avatar.jpg",
+      image: "/images/dr-lee-avatar-sm.jpg",
     },
     content,
   };

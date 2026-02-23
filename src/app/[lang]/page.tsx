@@ -75,7 +75,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       <section className="mb-16 bg-card rounded-2xl shadow-sm p-8 md:p-12">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
           <img
-            src="/images/dr-yongwoo-lee.jpg"
+            src="/images/dr-lee-avatar-lg.jpg"
             alt="Dr. Yongwoo Lee"
             className="w-28 h-28 rounded-full object-cover object-top shrink-0 mb-5"
             loading="lazy"

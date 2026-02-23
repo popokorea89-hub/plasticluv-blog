@@ -40,7 +40,7 @@ export function personSchema() {
     "@type": "Person",
     name: "Dr. Yongwoo Lee",
     jobTitle: "Board-Certified Plastic Surgeon",
-    image: `${SITE_URL}/images/dr-lee-avatar.svg`,
+    image: `${SITE_URL}/images/dr-lee-avatar-lg.jpg`,
     url: `${SITE_URL}/en/about`,
     sameAs: [],
     worksFor: medicalBusinessSchema(),
