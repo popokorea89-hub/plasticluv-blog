@@ -1,16 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n-routing";
 import LanguageSwitcher from "./LanguageSwitcher";
 import SearchOverlay from "./SearchOverlay";
 import type { Locale } from "@/lib/i18n";
+import type { BlogPostMeta } from "@/types/blog";
+import { categoryConfig, type Category } from "@/types/blog";
+import NextLink from "next/link";
 
-export default function Navbar({ lang }: { lang: Locale }) {
+export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostMeta[] }) {
   const t = useTranslations("nav");
   const [scrolled, setScrolled] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [browseOpen, setBrowseOpen] = useState(false);
+  const browseRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -24,11 +29,37 @@ export default function Navbar({ lang }: { lang: Locale }) {
         e.preventDefault();
         setSearchOpen(true);
       }
-      if (e.key === "Escape") setSearchOpen(false);
+      if (e.key === "Escape") {
+        setSearchOpen(false);
+        setBrowseOpen(false);
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  // Close browse when clicking outside
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      if (browseRef.current && !browseRef.current.contains(e.target as Node)) {
+        setBrowseOpen(false);
+      }
+    };
+    if (browseOpen) {
+      document.addEventListener("mousedown", onClick);
+      return () => document.removeEventListener("mousedown", onClick);
+    }
+  }, [browseOpen]);
+
+  // Group posts by category (exclude "all")
+  const grouped = Object.keys(categoryConfig)
+    .filter((k) => k !== "all")
+    .map((key) => ({
+      key: key as Category,
+      label: categoryConfig[key as Category].label,
+      posts: posts.filter((p) => p.category === key),
+    }))
+    .filter((g) => g.posts.length > 0);
 
   return (
     <>
@@ -54,6 +85,56 @@ export default function Navbar({ lang }: { lang: Locale }) {
             >
               {t("blog")}
             </Link>
+
+            {/* Browse Button */}
+            <div className="relative hidden md:block" ref={browseRef}>
+              <button
+                onClick={() => setBrowseOpen(!browseOpen)}
+                className="text-sm font-medium text-sub hover:text-text transition-colors flex items-center gap-1"
+              >
+                Browse
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  className={`transition-transform duration-200 ${browseOpen ? "rotate-180" : ""}`}
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+
+              {/* Dropdown Panel */}
+              {browseOpen && (
+                <div className="absolute right-0 top-full mt-3 w-[600px] max-h-[70vh] overflow-y-auto bg-bg border border-border rounded-xl shadow-lg p-5 animate-fade-up">
+                  {grouped.map((group) => (
+                    <div key={group.key} className="mb-5 last:mb-0">
+                      <h3 className="text-xs uppercase tracking-wider text-accent font-semibold mb-2 px-1">
+                        {group.label}
+                      </h3>
+                      <div className="grid grid-cols-1 gap-1">
+                        {group.posts.map((post) => (
+                          <NextLink
+                            key={post.slug}
+                            href={`/${lang}/blog/${post.slug}`}
+                            onClick={() => setBrowseOpen(false)}
+                            className="block px-3 py-2 rounded-lg text-sm text-text hover:bg-bg-2 transition-colors leading-snug"
+                          >
+                            {post.title}
+                          </NextLink>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                  {grouped.length === 0 && (
+                    <p className="text-sm text-muted text-center py-4">No posts yet.</p>
+                  )}
+                </div>
+              )}
+            </div>
+
             <Link
               href="/about"
               className="hidden md:block text-sm font-medium text-sub hover:text-text transition-colors"

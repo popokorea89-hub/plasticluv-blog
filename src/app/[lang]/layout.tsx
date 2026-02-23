@@ -2,6 +2,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { getMessages } from "next-intl/server";
 import { locales, isRtl, type Locale } from "@/lib/i18n";
+import { getAllPostsMeta } from "@/lib/content";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -21,10 +22,11 @@ export default async function LangLayout({
 
   const locale = lang as Locale;
   const messages = await getMessages();
+  const posts = getAllPostsMeta(locale);
 
   return (
     <NextIntlClientProvider messages={messages}>
-      <Navbar lang={locale} />
+      <Navbar lang={locale} posts={posts} />
       <main className="min-h-screen">{children}</main>
       <Footer lang={locale} />
     </NextIntlClientProvider>
