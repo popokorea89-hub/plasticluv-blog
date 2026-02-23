@@ -73,19 +73,19 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
       />
 
       {/* Author Banner */}
-      <section className="mb-16 bg-card rounded-2xl shadow-sm p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
-        <img
-          src="/images/dr-yongwoo-lee.jpg"
-          alt="Dr. Yongwoo Lee"
-          className="w-28 h-28 rounded-full object-cover object-top shrink-0"
-          loading="lazy"
-        />
-        <div className="text-center md:text-left">
-          <h3 className="font-[family-name:var(--font-display)] text-xl text-text mb-2">Dr. Yongwoo Lee</h3>
-          <p className="text-sub text-sm mb-4 leading-relaxed max-w-lg">
+      <section className="mb-16 bg-card rounded-2xl shadow-sm p-8 md:p-12">
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+          <img
+            src="/images/dr-yongwoo-lee.jpg"
+            alt="Dr. Yongwoo Lee"
+            className="w-28 h-28 rounded-full object-cover object-top shrink-0 mb-5"
+            loading="lazy"
+          />
+          <h3 className="font-[family-name:var(--font-display)] text-xl text-text mb-3">Dr. Yongwoo Lee</h3>
+          <p className="text-sub text-sm mb-5 leading-relaxed">
             Board-certified plastic surgeon at VIP Plastic Surgery, specializing in anti-aging surgery and blepharoplasty. Plastic Love is where his passion for the craft meets honest, patient-first guidance.
           </p>
-          <div className="flex flex-wrap justify-center md:justify-start gap-4 mb-4">
+          <div className="flex flex-wrap justify-center gap-4 mb-5">
             <span className="flex items-center gap-1.5 text-xs text-sub">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               Board Certified
