@@ -76,10 +76,10 @@ export default function ArticlesClient({ posts, lang }: { posts: BlogPostMeta[];
       {/* Header */}
       <div className="mb-10">
         <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-text mb-3">
-          All Articles
+          Browse by Topic
         </h1>
         <p className="text-sub text-base max-w-2xl">
-          Browse every article by topic. Find in-depth guides, procedure breakdowns, and expert insights — all in one place.
+          Every article organized by category — from surgical techniques and recovery to non-surgical options and aftercare.
         </p>
       </div>
 
