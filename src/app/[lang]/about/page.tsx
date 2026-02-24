@@ -26,11 +26,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
 const training = [
   { role: "Plastic Surgeon", place: "VIP Plastic Surgery", year: "Present", current: true },
-  { role: "Clinical Professor", place: "Pusan National University Hospital", year: "" },
+  { role: "Clinical Professor", place: "Pusan National University Hospital, Plastic Surgery", year: "" },
   { role: "Fellowship", place: "Pusan National University Hospital, Plastic Surgery", year: "" },
   { role: "Board Certified", place: "Korean Board of Plastic Surgery", year: "" },
   { role: "Resident", place: "Pusan National University Hospital, Plastic Surgery", year: "" },
-  { role: "Intern", place: "Pusan National University Hospital", year: "" },
+  { role: "Internship", place: "Pusan National University Hospital", year: "" },
 ];
 
 const specialties = [
