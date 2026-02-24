@@ -104,7 +104,7 @@ export async function POST(request: NextRequest) {
 
       await transporter.sendMail({
         from: `"Plastic Love" <${gmailUser}>`,
-        to: "popokorea89@gmail.com",
+        to: "info@plasticluv.com",
         replyTo: email,
         subject: `Consultation Inquiry from ${name}${service ? ` — ${service}` : ""}`,
         html: htmlBody,

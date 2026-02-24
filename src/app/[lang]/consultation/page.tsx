@@ -222,7 +222,7 @@ export default function ConsultationPage() {
             {status === "error" && (
               <p className="text-red-500 text-sm text-center">
                 Something went wrong. Please try again or email us directly at{" "}
-                <a href="mailto:popokorea89@gmail.com" className="underline">popokorea89@gmail.com</a>.
+                <a href="mailto:info@plasticluv.com" className="underline">info@plasticluv.com</a>.
               </p>
             )}
 
