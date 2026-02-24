@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 
   return {
-    title: `${t("title")} — Board-Certified Plastic Surgeon in Seoul`,
+    title: `${t("title")} — Board-Certified Plastic Surgeon in South Korea`,
     description:
       "Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery. University of Michigan — Ann Arbor graduate and ISAPS member specializing in anti-aging and eye surgery.",
     alternates: {

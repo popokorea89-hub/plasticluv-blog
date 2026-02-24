@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://plasticluv.com"),
   title: {
-    default: "Plastic Love — Trusted Plastic Surgery Insights from Seoul",
+    default: "Plastic Love — Trusted Plastic Surgery Insights from South Korea",
     template: "%s | Plastic Love",
   },
   description:

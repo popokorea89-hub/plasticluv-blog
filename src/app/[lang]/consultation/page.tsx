@@ -102,20 +102,23 @@ export default function ConsultationPage() {
           </div>
 
           {/* Author Card */}
-          <div className="bg-card rounded-xl border border-border p-5 max-w-sm">
-            <div className="flex items-center gap-3">
+          <Link href="/about" className="block group max-w-sm">
+            <div className="bg-card rounded-xl border border-border overflow-hidden hover:border-accent/40 hover:shadow-md transition-all">
               <img
-                src="/images/dr-lee-avatar-md.jpg"
-                alt="Dr. Yongwoo Lee"
-                className="w-12 h-12 rounded-full object-cover object-top"
+                src="/images/dr-yongwoo-lee-web.jpg"
+                alt="Dr. Yongwoo Lee — Board-Certified Plastic Surgeon"
+                className="w-full aspect-[3/4] object-cover object-top"
+                loading="lazy"
               />
-              <div>
-                <p className="text-sm font-medium text-text">Dr. Yongwoo Lee</p>
-                <p className="text-xs text-muted">Board-Certified Plastic Surgeon</p>
-                <p className="text-xs text-muted">VIP Plastic Surgery, Seoul</p>
+              <div className="p-5">
+                <p className="text-sm font-semibold text-text mb-0.5 group-hover:text-cta transition-colors">Dr. Yongwoo Lee</p>
+                <p className="text-xs text-cta font-medium mb-2">Board-Certified Plastic Surgeon</p>
+                <p className="text-xs text-sub leading-relaxed">
+                  University of Michigan — Ann Arbor &amp; Pusan National University College of Medicine. ISAPS member specializing in anti-aging and aesthetic surgery at VIP Plastic Surgery.
+                </p>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
 
         {/* Right — Form */}

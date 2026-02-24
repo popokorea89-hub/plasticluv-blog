@@ -10,11 +10,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const t = await getTranslations({ locale: lang, namespace: "home" });
   return {
-    title: "Plastic Love — Trusted Plastic Surgery Insights from Seoul",
+    title: "Plastic Love — Trusted Plastic Surgery Insights from South Korea",
     description: "Evidence-based plastic surgery information from Dr. Yongwoo Lee, a board-certified surgeon specializing in facelift and blepharoplasty at VIP Plastic Surgery, South Korea.",
-    keywords: ["plastic surgery", "facelift", "blepharoplasty", "anti-aging surgery", "Seoul", "Korea", "Dr. Yongwoo Lee", "VIP Plastic Surgery", "double eyelid surgery", "rhinoplasty", "botox", "fillers"],
+    keywords: ["plastic surgery", "facelift", "blepharoplasty", "anti-aging surgery", "South Korea", "Korea", "Dr. Yongwoo Lee", "VIP Plastic Surgery", "double eyelid surgery", "rhinoplasty", "botox", "fillers"],
     openGraph: {
-      title: "Plastic Love — Trusted Plastic Surgery Insights from Seoul",
+      title: "Plastic Love — Trusted Plastic Surgery Insights from South Korea",
       description: "Plastic Love — where the art of aesthetics meets the science of care. By Dr. Yongwoo Lee.",
       images: [{ url: "https://plasticluv.com/images/og-default.svg", width: 1200, height: 630, alt: "Plastic Love" }],
     },
