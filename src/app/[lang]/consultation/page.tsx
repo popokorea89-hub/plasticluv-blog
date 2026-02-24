@@ -74,8 +74,8 @@ export default function ConsultationPage() {
   }
 
   return (
-    <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-16">
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-start">
+    <div className="max-w-[960px] mx-auto px-6 md:px-12 py-12 md:py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 lg:gap-12 items-start">
         {/* Left — Info */}
         <div className="lg:sticky lg:top-24">
           <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-text leading-tight mb-4">
