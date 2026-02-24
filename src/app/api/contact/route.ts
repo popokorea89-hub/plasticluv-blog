@@ -106,7 +106,7 @@ export async function POST(request: NextRequest) {
         from: `"Plastic Love" <${gmailUser}>`,
         to: "info@plasticluv.com",
         replyTo: email,
-        subject: `Consultation Inquiry from ${name}${service ? ` — ${service}` : ""}`,
+        subject: `[Plastic Love] Consultation Inquiry from ${name}${service ? ` — ${service}` : ""}`,
         html: htmlBody,
       });
     } else {
