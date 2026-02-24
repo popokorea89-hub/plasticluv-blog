@@ -61,7 +61,7 @@ export default function ConsultationPage() {
           Thank You
         </h1>
         <p className="text-sub text-base leading-relaxed mb-8">
-          Your inquiry has been sent successfully. Dr. Lee&apos;s team will review your message and get back to you as soon as possible.
+          Your inquiry has been sent successfully. Dr. Yongwoo Lee&apos;s team will review your message and get back to you as soon as possible.
         </p>
         <Link
           href="/"
@@ -82,7 +82,7 @@ export default function ConsultationPage() {
             Get in Touch
           </h1>
           <p className="text-sub text-base leading-relaxed mb-8 max-w-lg">
-            Have a question about a procedure, or ready to explore your options? Send us a message and Dr. Lee&apos;s team will follow up with personalized guidance.
+            Have a question about a procedure, or ready to explore your options? Send us a message and Dr. Yongwoo Lee&apos;s team will follow up with personalized guidance.
           </p>
 
           {/* Trust Signals */}
@@ -231,7 +231,7 @@ export default function ConsultationPage() {
             )}
 
             <p className="text-muted text-xs text-center leading-relaxed">
-              By submitting this form, you agree to receive a response from Dr. Lee&apos;s team.
+              By submitting this form, you agree to receive a response from Dr. Yongwoo Lee&apos;s team.
               Your information will not be shared with third parties.
             </p>
           </form>

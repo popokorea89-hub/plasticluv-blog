@@ -19,7 +19,7 @@ export default function NotFound() {
           href="/about"
           className="px-6 py-2.5 bg-bg-2 text-text text-sm font-medium rounded-full hover:bg-border transition-colors"
         >
-          About Dr. Lee
+          About Dr. Yongwoo Lee
         </Link>
       </div>
     </div>
