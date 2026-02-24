@@ -86,14 +86,12 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
             </button>
 
             {/* CTA */}
-            <a
-              href="https://www.vippskorea.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/consultation"
               className="hidden sm:flex items-center px-4 py-2 bg-cta text-white text-sm font-medium rounded-full hover:bg-cta-hover hover:-translate-y-0.5 transition-all"
             >
               {t("bookConsultation")}
-            </a>
+            </Link>
 
             {/* Mobile Hamburger */}
             <button
@@ -118,14 +116,13 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
             <Link href="/" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">Blog</Link>
             <Link href="/articles" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">Articles</Link>
             <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">About</Link>
-            <a
-              href="https://www.vippskorea.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/consultation"
+              onClick={() => setMobileOpen(false)}
               className="block text-center bg-cta text-white text-sm font-medium py-2.5 rounded-full hover:bg-cta-hover transition-colors"
             >
               {t("bookConsultation")}
-            </a>
+            </Link>
           </div>
         )}
       </nav>

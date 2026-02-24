@@ -57,14 +57,23 @@ export default function CategoryFilter({ allLabel, posts, lang, labels }: Catego
         <section className="mb-12 animate-fade-up">
           <Link href={`/${lang}/blog/${featuredPost.slug}`}>
             <div className="bg-card rounded-2xl shadow-md overflow-hidden grid md:grid-cols-[1.1fr_1fr] hover:-translate-y-1 hover:shadow-lg transition-all">
-              <div className="h-64 md:h-auto bg-gradient-to-br from-accent/30 via-cta/20 to-gold/30 flex items-center justify-center">
-                <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent">
-                    <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
-                    <path d="M12 8v4l2 2" />
-                  </svg>
+              {featuredPost.image ? (
+                <img
+                  src={featuredPost.image}
+                  alt={featuredPost.title}
+                  className="w-full h-64 md:h-full object-cover"
+                  loading="eager"
+                />
+              ) : (
+                <div className="h-64 md:h-auto bg-gradient-to-br from-accent/30 via-cta/20 to-gold/30 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-accent/20 flex items-center justify-center">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-accent">
+                      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
+                      <path d="M12 8v4l2 2" />
+                    </svg>
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="p-8 md:p-10 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-xs uppercase text-cta font-semibold bg-cta/10 px-3 py-1 rounded-full">

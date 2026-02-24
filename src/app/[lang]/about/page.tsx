@@ -1,6 +1,7 @@
 import { getTranslations } from "next-intl/server";
 import { personSchema, medicalBusinessSchema, breadcrumbSchema } from "@/lib/schema";
 import { locales } from "@/lib/i18n";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -238,14 +239,12 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               </h3>
               <p className="text-bg/70 text-sm max-w-lg">{t("ctaDesc")}</p>
             </div>
-            <a
-              href="https://www.vippskorea.com"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={`/${lang}/consultation`}
               className="shrink-0 px-6 py-3 bg-cta text-white text-sm font-medium rounded-full hover:bg-cta-hover transition-colors"
             >
               {t("bookConsultation")}
-            </a>
+            </Link>
           </div>
         </section>
       </div>

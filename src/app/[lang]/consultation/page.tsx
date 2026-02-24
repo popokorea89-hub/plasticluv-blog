@@ -1,0 +1,238 @@
+"use client";
+
+import { useState } from "react";
+import Link from "next/link";
+
+const services = [
+  "Facelift & Anti-Aging",
+  "Eye Surgery & Blepharoplasty",
+  "Botox & Fillers",
+  "Thread Lifting",
+  "Laser Treatments",
+  "Other",
+];
+
+export default function ConsultationPage() {
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    service: "",
+    message: "",
+  });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", phone: "", service: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  if (status === "success") {
+    return (
+      <div className="max-w-[600px] mx-auto px-6 py-24 md:py-32 text-center">
+        <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-6">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22c55e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h1 className="font-[family-name:var(--font-display)] text-3xl text-text mb-3">
+          Thank You
+        </h1>
+        <p className="text-sub text-base leading-relaxed mb-8">
+          Your inquiry has been sent successfully. Dr. Lee&apos;s team will review your message and respond within 24–48 hours.
+        </p>
+        <Link
+          href="/"
+          className="inline-flex items-center px-5 py-2.5 bg-cta text-white text-sm font-medium rounded-full hover:bg-cta-hover transition-colors"
+        >
+          Back to Blog
+        </Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-12 lg:gap-16 items-start">
+        {/* Left — Info */}
+        <div className="lg:sticky lg:top-24">
+          <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-text leading-tight mb-4">
+            Book Your Free Consultation
+          </h1>
+          <p className="text-sub text-base leading-relaxed mb-8 max-w-lg">
+            Take the first step toward your aesthetic goals. Share your questions with Dr. Yongwoo Lee, and our team will provide personalized guidance — no obligations, no pressure.
+          </p>
+
+          {/* Trust Signals */}
+          <div className="space-y-4 mb-10">
+            {[
+              { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", text: "Board-certified plastic surgeon" },
+              { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", text: "Response within 24–48 hours" },
+              { icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z", text: "International patient coordination available" },
+              { icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z", text: "Your information is kept strictly confidential" },
+            ].map((item) => (
+              <div key={item.text} className="flex items-start gap-3">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cta shrink-0 mt-0.5">
+                  <path d={item.icon} />
+                </svg>
+                <span className="text-sub text-sm">{item.text}</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Author Card */}
+          <div className="bg-card rounded-xl border border-border p-5 max-w-sm">
+            <div className="flex items-center gap-3">
+              <img
+                src="/images/dr-lee-avatar-md.jpg"
+                alt="Dr. Yongwoo Lee"
+                className="w-12 h-12 rounded-full object-cover object-top"
+              />
+              <div>
+                <p className="text-sm font-medium text-text">Dr. Yongwoo Lee</p>
+                <p className="text-xs text-muted">Board-Certified Plastic Surgeon</p>
+                <p className="text-xs text-muted">VIP Plastic Surgery, Seoul</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right — Form */}
+        <div className="bg-card rounded-2xl border border-border p-6 md:p-8 shadow-sm">
+          <h2 className="font-semibold text-text text-lg mb-1">Send Your Inquiry</h2>
+          <p className="text-muted text-sm mb-6">All fields marked with * are required.</p>
+
+          <form onSubmit={handleSubmit} className="space-y-5">
+            {/* Name */}
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium text-text mb-1.5">
+                Full Name *
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={form.name}
+                onChange={handleChange}
+                placeholder="e.g. Jane Smith"
+                className="w-full px-4 py-2.5 text-sm text-text bg-bg border border-border rounded-xl focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors placeholder:text-muted/50"
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium text-text mb-1.5">
+                Email Address *
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={form.email}
+                onChange={handleChange}
+                placeholder="you@example.com"
+                className="w-full px-4 py-2.5 text-sm text-text bg-bg border border-border rounded-xl focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors placeholder:text-muted/50"
+              />
+            </div>
+
+            {/* Phone */}
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-text mb-1.5">
+                Phone Number <span className="text-muted font-normal">(optional)</span>
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                placeholder="+1 (555) 000-0000"
+                className="w-full px-4 py-2.5 text-sm text-text bg-bg border border-border rounded-xl focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors placeholder:text-muted/50"
+              />
+            </div>
+
+            {/* Service */}
+            <div>
+              <label htmlFor="service" className="block text-sm font-medium text-text mb-1.5">
+                Service of Interest
+              </label>
+              <select
+                id="service"
+                name="service"
+                value={form.service}
+                onChange={handleChange}
+                className="w-full px-4 py-2.5 text-sm text-text bg-bg border border-border rounded-xl focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors appearance-none"
+              >
+                <option value="">Select a service...</option>
+                {services.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+            </div>
+
+            {/* Message */}
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-text mb-1.5">
+                Your Message *
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={5}
+                value={form.message}
+                onChange={handleChange}
+                placeholder="Tell us about your goals, questions, or concerns..."
+                className="w-full px-4 py-2.5 text-sm text-text bg-bg border border-border rounded-xl focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors placeholder:text-muted/50 resize-none"
+              />
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="w-full py-3 bg-cta text-white text-sm font-medium rounded-xl hover:bg-cta-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {status === "sending" ? "Sending..." : "Send Inquiry"}
+            </button>
+
+            {status === "error" && (
+              <p className="text-red-500 text-sm text-center">
+                Something went wrong. Please try again or email us directly at{" "}
+                <a href="mailto:popokorea89@gmail.com" className="underline">popokorea89@gmail.com</a>.
+              </p>
+            )}
+
+            <p className="text-muted text-xs text-center leading-relaxed">
+              By submitting this form, you agree to receive a response from Dr. Lee&apos;s team.
+              Your information will not be shared with third parties.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+}

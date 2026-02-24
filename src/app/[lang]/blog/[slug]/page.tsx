@@ -194,14 +194,12 @@ export default async function ArticlePage({
                 <p className="text-bg/70 text-xs mb-4 leading-relaxed">
                   {t("consultationDesc")}
                 </p>
-                <a
-                  href="https://www.vippskorea.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/consultation"
                   className="block w-full text-center bg-cta text-white text-sm font-medium py-2.5 rounded-lg hover:bg-cta-hover transition-colors"
                 >
                   {t("bookFree")}
-                </a>
+                </Link>
               </div>
 
               {/* Author Card */}
