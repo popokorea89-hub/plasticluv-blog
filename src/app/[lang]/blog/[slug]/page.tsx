@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import remarkGfm from "remark-gfm";
 import { getPostBySlug, getPostSlugs, getRelatedPosts } from "@/lib/content";
-import { articleSchema, breadcrumbSchema, personSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, personSchema, faqSchema } from "@/lib/schema";
 import { Link } from "@/lib/i18n-routing";
 
 import type { Metadata } from "next";
@@ -47,7 +47,7 @@ export async function generateMetadata({
       authors: ["Dr. Yongwoo Lee"],
       tags: post.tags,
       images: post.image
-        ? [{ url: `https://plasticluv.com${post.image}`, width: 1200, height: 600, alt: post.title }]
+        ? [{ url: `https://plasticluv.com${post.image}`, width: 1200, height: 654, alt: post.title }]
         : [{ url: "https://plasticluv.com/images/og-default.svg", width: 1200, height: 630, alt: "Plastic Love" }],
     },
     twitter: {
@@ -74,6 +74,16 @@ export default async function ArticlePage({
 
   const t = await getTranslations({ locale: lang, namespace: "article" });
   const related = getRelatedPosts(slug, post.category, lang);
+
+  // Extract FAQ pairs from MDX content (bold questions followed by paragraphs)
+  const faqPairs: { question: string; answer: string }[] = [];
+  const faqSection = post.content.split(/^## Frequently Asked Questions/m)[1];
+  if (faqSection) {
+    const faqMatches = faqSection.matchAll(/\*\*(.+?)\*\*\s*\n\n([^*]+?)(?=\n\n\*\*|\s*$)/g);
+    for (const match of faqMatches) {
+      faqPairs.push({ question: match[1].trim(), answer: match[2].trim() });
+    }
+  }
 
   return (
     <>
@@ -102,6 +112,14 @@ export default async function ArticlePage({
           __html: JSON.stringify(personSchema()),
         }}
       />
+      {faqPairs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema(faqPairs)),
+          }}
+        />
+      )}
 
       {/* Article Header */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
@@ -148,7 +166,16 @@ export default async function ArticlePage({
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10 max-w-[1200px] mx-auto mb-16">
           {/* Main Content */}
           <article className="prose max-w-none">
-            <MDXRemote source={post.content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
+            <MDXRemote
+              source={post.content}
+              options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+              components={{
+                img: (props: React.ComponentPropsWithoutRef<"img">) => (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img {...props} loading="lazy" decoding="async" className="w-full h-auto rounded-xl" alt={props.alt || ""} />
+                ),
+              }}
+            />
 
             {/* Disclaimer */}
             <div className="mt-12 p-5 bg-bg-2 rounded-xl border border-border">

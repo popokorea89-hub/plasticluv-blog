@@ -42,7 +42,11 @@ export function personSchema() {
     jobTitle: "Board-Certified Plastic Surgeon",
     image: `${SITE_URL}/images/dr-lee-avatar-lg.jpg`,
     url: `${SITE_URL}/en/about`,
-    sameAs: [],
+    sameAs: [
+      "https://plasticluv.com/en/about",
+      "https://www.instagram.com/plasticluv",
+      "https://www.linkedin.com/in/dr-yongwoo-lee",
+    ],
     worksFor: medicalBusinessSchema(),
     alumniOf: [
       {
