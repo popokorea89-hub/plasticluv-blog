@@ -5,7 +5,8 @@ import Link from "next/link";
 
 const services = [
   "Facelift & Anti-Aging",
-  "Eye Surgery & Blepharoplasty",
+  "Eye Surgery",
+  "Liposuction & Body Contouring",
   "Botox & Fillers",
   "Thread Lifting",
   "Laser Treatments",

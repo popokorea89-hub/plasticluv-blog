@@ -41,9 +41,15 @@ const specialties = [
     primary: true,
   },
   {
-    title: "Eye Surgery & Blepharoplasty",
-    desc: "Upper/lower eyelid surgery, ptosis correction, double eyelid, and epicanthoplasty.",
+    title: "Eye Surgery",
+    desc: "Blepharoplasty, ptosis correction, double eyelid, epicanthoplasty, and under-eye rejuvenation.",
     icon: "M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8z M12 9a3 3 0 100 6 3 3 0 000-6z",
+    primary: true,
+  },
+  {
+    title: "Liposuction & Body Contouring",
+    desc: "Targeted fat removal and sculpting for the face, chin, abdomen, and thighs.",
+    icon: "M4 4h16v16H4z M9 9v6 M15 9v6",
     primary: true,
   },
   {
