@@ -64,12 +64,12 @@ export function getFeaturedPost(lang: string = "en"): BlogPost | null {
 
 export function getPostsByCategory(category: string, lang: string = "en"): BlogPostMeta[] {
   if (category === "All") return getAllPostsMeta(lang);
-  return getAllPostsMeta(lang).filter((p) => p.category === category);
+  return getAllPostsMeta(lang).filter((p) => p.category.toLowerCase() === category.toLowerCase());
 }
 
 export function getRelatedPosts(slug: string, category: string, lang: string = "en", limit = 3): BlogPostMeta[] {
   return getAllPostsMeta(lang)
     .filter((p) => p.slug !== slug)
-    .filter((p) => p.category === category)
+    .filter((p) => p.category.toLowerCase() === category.toLowerCase())
     .slice(0, limit);
 }

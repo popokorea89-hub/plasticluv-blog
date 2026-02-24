@@ -27,7 +27,7 @@ function formatReadTime(rt: number | string): string {
 export default function CategoryFilter({ allLabel, posts, lang, labels }: CategoryFilterProps) {
   const [selected, setSelected] = useState<Category | "all">("all");
 
-  const filtered = selected === "all" ? posts : posts.filter((p) => p.category === selected);
+  const filtered = selected === "all" ? posts : posts.filter((p) => p.category.toLowerCase() === selected);
   const featuredPost = filtered.find((p) => p.featured);
   const otherPosts = filtered.filter((p) => p !== featuredPost);
 
