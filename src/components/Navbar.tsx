@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n-routing";
-import LanguageSwitcher from "./LanguageSwitcher";
 import SearchOverlay from "./SearchOverlay";
 import type { Locale } from "@/lib/i18n";
 import type { BlogPostMeta } from "@/types/blog";
@@ -85,9 +84,6 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
                 <path d="M21 21l-4.35-4.35" />
               </svg>
             </button>
-
-            {/* Language Switcher */}
-            <LanguageSwitcher currentLang={lang} />
 
             {/* CTA */}
             <a
