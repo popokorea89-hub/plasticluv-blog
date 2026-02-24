@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import remarkGfm from "remark-gfm";
 import { getPostBySlug, getPostSlugs, getRelatedPosts } from "@/lib/content";
 import { articleSchema, breadcrumbSchema, personSchema } from "@/lib/schema";
 import { Link } from "@/lib/i18n-routing";
@@ -147,7 +148,7 @@ export default async function ArticlePage({
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10 max-w-[1200px] mx-auto mb-16">
           {/* Main Content */}
           <article className="prose max-w-none">
-            <MDXRemote source={post.content} />
+            <MDXRemote source={post.content} options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} />
 
             {/* Disclaimer */}
             <div className="mt-12 p-5 bg-bg-2 rounded-xl border border-border">
