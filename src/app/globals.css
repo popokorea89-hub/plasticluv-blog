@@ -108,23 +108,38 @@ body {
   margin: 2rem 0;
 }
 
-/* Language-specific fonts */
-:lang(ko) {
-  --font-display: "Noto Serif KR", serif;
-  --font-body: "Noto Sans KR", sans-serif;
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9375rem;
 }
-:lang(ja) {
-  --font-display: "Noto Serif JP", serif;
-  --font-body: "Noto Sans JP", sans-serif;
+
+.prose thead {
+  background: var(--color-bg-2);
 }
-:lang(zh) {
-  --font-display: "Noto Serif SC", serif;
-  --font-body: "Noto Sans SC", sans-serif;
+
+.prose th {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
 }
-:lang(ar) {
-  --font-display: "Amiri", serif;
-  --font-body: "Noto Sans Arabic", sans-serif;
-  direction: rtl;
+
+.prose td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-sub);
+  line-height: 1.6;
+}
+
+.prose tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.prose tbody tr:hover {
+  background: var(--color-bg-2);
 }
 
 /* Animations */
