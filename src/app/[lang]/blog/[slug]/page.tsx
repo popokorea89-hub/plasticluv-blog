@@ -143,7 +143,7 @@ export default async function ArticlePage({
         </header>
 
         {/* Cover Image */}
-        <div className="max-w-[920px] mx-auto mb-12">
+        <div className="max-w-[1100px] mx-auto mb-12">
           {post.image ? (
             <img
               src={post.image}
@@ -163,7 +163,7 @@ export default async function ArticlePage({
         </div>
 
         {/* Article Layout: Content + Sidebar */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10 max-w-[1200px] mx-auto mb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 max-w-[1400px] mx-auto mb-16">
           {/* Main Content */}
           <article className="prose max-w-none">
             <MDXRemote
@@ -245,7 +245,7 @@ export default async function ArticlePage({
 
         {/* Related Articles Grid */}
         {related.length > 0 && (
-          <section className="max-w-[1100px] mx-auto mb-16">
+          <section className="max-w-[1400px] mx-auto mb-16">
             <h2 className="font-[family-name:var(--font-display)] text-2xl text-text mb-8">{t("relatedPosts")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {related.map((r) => (
