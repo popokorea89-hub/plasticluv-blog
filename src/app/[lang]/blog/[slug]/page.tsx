@@ -208,7 +208,7 @@ export default async function ArticlePage({
                   <img
                     src="/images/dr-yongwoo-lee-web.jpg"
                     alt="Dr. Yongwoo Lee — Board-Certified Plastic Surgeon"
-                    className="w-full aspect-[4/3] object-cover object-top"
+                    className="w-full aspect-[3/4] object-cover object-top"
                     loading="lazy"
                   />
                   <div className="p-5">
