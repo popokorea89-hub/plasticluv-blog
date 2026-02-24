@@ -203,23 +203,24 @@ export default async function ArticlePage({
               </div>
 
               {/* Author Card */}
-              <div className="bg-card rounded-xl border border-border p-5">
-                <h4 className="text-xs uppercase text-muted tracking-wider mb-3">{t("aboutAuthor")}</h4>
-                <div className="flex items-center gap-3 mb-3">
+              <Link href="/about" className="block group">
+                <div className="bg-card rounded-xl border border-border overflow-hidden hover:border-accent/40 hover:shadow-md transition-all">
                   <img
-                    src="/images/dr-lee-avatar-md.jpg"
-                    alt="Dr. Yongwoo Lee"
-                    className="w-10 h-10 rounded-full object-cover object-top"
+                    src="/images/dr-yongwoo-lee-web.jpg"
+                    alt="Dr. Yongwoo Lee — Board-Certified Plastic Surgeon"
+                    className="w-full aspect-[4/3] object-cover object-top"
+                    loading="lazy"
                   />
-                  <div>
-                    <p className="text-sm font-medium text-text">Dr. Yongwoo Lee</p>
-                    <p className="text-xs text-muted">Board-Certified Plastic Surgeon</p>
+                  <div className="p-5">
+                    <h4 className="text-xs uppercase text-muted tracking-wider mb-3">{t("aboutAuthor")}</h4>
+                    <p className="text-sm font-semibold text-text mb-0.5 group-hover:text-cta transition-colors">Dr. Yongwoo Lee</p>
+                    <p className="text-xs text-cta font-medium mb-2">Board-Certified Plastic Surgeon</p>
+                    <p className="text-xs text-sub leading-relaxed">
+                      University of Michigan — Ann Arbor &amp; Pusan National University College of Medicine. ISAPS member specializing in anti-aging and aesthetic surgery at VIP Plastic Surgery.
+                    </p>
                   </div>
                 </div>
-                <p className="text-xs text-sub leading-relaxed">
-                  Plastic surgeon at VIP Plastic Surgery. University of Michigan — Ann Arbor &amp; Pusan National University, College of Medicine.
-                </p>
-              </div>
+              </Link>
 
               {/* Related Posts */}
               {related.length > 0 && (

@@ -60,7 +60,7 @@ export default function ConsultationPage() {
           Thank You
         </h1>
         <p className="text-sub text-base leading-relaxed mb-8">
-          Your inquiry has been sent successfully. Dr. Lee&apos;s team will review your message and respond within 24–48 hours.
+          Your inquiry has been sent successfully. Dr. Lee&apos;s team will review your message and get back to you as soon as possible.
         </p>
         <Link
           href="/"
@@ -78,19 +78,19 @@ export default function ConsultationPage() {
         {/* Left — Info */}
         <div className="lg:sticky lg:top-24">
           <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-text leading-tight mb-4">
-            Book Your Free Consultation
+            Get in Touch
           </h1>
           <p className="text-sub text-base leading-relaxed mb-8 max-w-lg">
-            Take the first step toward your aesthetic goals. Share your questions with Dr. Yongwoo Lee, and our team will provide personalized guidance — no obligations, no pressure.
+            Have a question about a procedure, or ready to explore your options? Send us a message and Dr. Lee&apos;s team will follow up with personalized guidance.
           </p>
 
           {/* Trust Signals */}
           <div className="space-y-4 mb-10">
             {[
               { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", text: "Board-certified plastic surgeon" },
-              { icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z", text: "Response within 24–48 hours" },
               { icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z", text: "International patient coordination available" },
               { icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z", text: "Your information is kept strictly confidential" },
+              { icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", text: "No obligations — just honest, professional advice" },
             ].map((item) => (
               <div key={item.text} className="flex items-start gap-3">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cta shrink-0 mt-0.5">

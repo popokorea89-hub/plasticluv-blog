@@ -5,8 +5,6 @@ import Link from "next/link";
 import { categoryConfig, type Category } from "@/types/blog";
 import type { BlogPostMeta } from "@/types/blog";
 
-type SortOption = "newest" | "oldest" | "readTime";
-
 function formatReadTime(rt: number | string): string {
   if (typeof rt === "number") return `${rt}`;
   const match = String(rt).match(/\d+/);
@@ -18,184 +16,179 @@ function formatDate(dateStr: string): string {
   return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
 }
 
+// Category descriptions for the directory-style layout
+const categoryDescriptions: Record<string, string> = {
+  eyes: "Blepharoplasty, ptosis correction, double eyelid surgery, and other eye procedures.",
+  lifting: "Facelifts, thread lifts, and anti-aging surgical techniques.",
+  injectables: "Botox, dermal fillers, and non-surgical facial contouring.",
+  skin: "Laser treatments, skin rejuvenation, and texture improvement.",
+  "before-and-after": "Real results and patient transformation stories.",
+  "beauty-insider": "Industry trends, tips, and behind-the-scenes insights.",
+};
+
 export default function ArticlesClient({ posts, lang }: { posts: BlogPostMeta[]; lang: string }) {
-  const [category, setCategory] = useState<Category | "all">("all");
-  const [sort, setSort] = useState<SortOption>("newest");
   const [search, setSearch] = useState("");
 
-  const filtered = useMemo(() => {
-    let result = posts;
+  // Group posts by category (excluding "all")
+  const grouped = useMemo(() => {
+    const groups: Record<string, BlogPostMeta[]> = {};
 
-    // Category filter
-    if (category !== "all") {
-      result = result.filter((p) => p.category.toLowerCase() === category);
+    for (const post of posts) {
+      const cat = post.category.toLowerCase();
+      if (!groups[cat]) groups[cat] = [];
+      groups[cat].push(post);
     }
 
-    // Search filter
-    if (search.trim()) {
-      const q = search.toLowerCase();
-      result = result.filter(
+    // Sort each group by newest first
+    for (const key of Object.keys(groups)) {
+      groups[key].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    }
+
+    return groups;
+  }, [posts]);
+
+  // Filter by search
+  const filteredGroups = useMemo(() => {
+    if (!search.trim()) return grouped;
+
+    const q = search.toLowerCase();
+    const result: Record<string, BlogPostMeta[]> = {};
+
+    for (const [cat, catPosts] of Object.entries(grouped)) {
+      const matches = catPosts.filter(
         (p) =>
           p.title.toLowerCase().includes(q) ||
           p.description.toLowerCase().includes(q) ||
           p.tags.some((t) => t.toLowerCase().includes(q))
       );
+      if (matches.length > 0) result[cat] = matches;
     }
 
-    // Sort
-    result = [...result].sort((a, b) => {
-      if (sort === "oldest") return new Date(a.date).getTime() - new Date(b.date).getTime();
-      if (sort === "readTime") return Number(a.readTime) - Number(b.readTime);
-      return new Date(b.date).getTime() - new Date(a.date).getTime(); // newest
-    });
-
     return result;
-  }, [posts, category, sort, search]);
+  }, [grouped, search]);
 
-  const totalCount = posts.length;
-  const filteredCount = filtered.length;
+  // Category order (same as categoryConfig, minus "all")
+  const categoryOrder = Object.keys(categoryConfig).filter((k) => k !== "all") as Category[];
+  const totalResults = Object.values(filteredGroups).reduce((sum, arr) => sum + arr.length, 0);
 
   return (
     <div className="max-w-[1400px] mx-auto px-6 md:px-12 py-12 md:py-16">
       {/* Header */}
       <div className="mb-10">
         <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-4xl text-text mb-3">
-          Articles
+          All Articles
         </h1>
         <p className="text-sub text-base max-w-2xl">
-          Evidence-based insights from a board-certified plastic surgeon. Browse by topic, search by keyword, or sort to find exactly what you need.
+          Browse every article by topic. Find in-depth guides, procedure breakdowns, and expert insights — all in one place.
         </p>
       </div>
 
-      {/* Toolbar: Category + Search + Sort */}
-      <div className="space-y-4 mb-10">
-        {/* Category Tabs */}
-        <div className="flex flex-wrap gap-2">
-          {(Object.entries(categoryConfig) as [Category, { label: string }][]).map(
-            ([key, { label }]) => (
-              <button
-                key={key}
-                onClick={() => setCategory(key)}
-                className={`px-4 py-2 text-sm rounded-full border transition-all duration-200 cursor-pointer ${
-                  category === key
-                    ? "bg-text text-bg border-text shadow-sm"
-                    : "bg-transparent text-sub border-border hover:border-accent hover:text-accent"
-                }`}
-              >
-                {label}
-              </button>
-            )
-          )}
+      {/* Search Bar */}
+      <div className="mb-12">
+        <div className="relative max-w-md">
+          <svg
+            width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            className="absolute left-3 top-1/2 -translate-y-1/2 text-muted"
+          >
+            <circle cx="11" cy="11" r="8" />
+            <path d="M21 21l-4.35-4.35" />
+          </svg>
+          <input
+            type="text"
+            placeholder="Search by title, topic, or keyword..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            className="w-full pl-10 pr-4 py-2.5 text-sm text-text bg-card border border-border rounded-xl focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors placeholder:text-muted/50"
+          />
         </div>
-
-        {/* Search + Sort Row */}
-        <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
-          {/* Search */}
-          <div className="relative flex-1 max-w-md">
-            <svg
-              width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-muted"
-            >
-              <circle cx="11" cy="11" r="8" />
-              <path d="M21 21l-4.35-4.35" />
-            </svg>
-            <input
-              type="text"
-              placeholder="Search articles..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full pl-10 pr-4 py-2.5 text-sm text-text bg-card border border-border rounded-xl focus:outline-none focus:border-cta focus:ring-1 focus:ring-cta/30 transition-colors placeholder:text-muted/50"
-            />
-          </div>
-
-          {/* Sort */}
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-muted whitespace-nowrap">Sort by</span>
-            <select
-              value={sort}
-              onChange={(e) => setSort(e.target.value as SortOption)}
-              className="px-3 py-2.5 text-sm text-text bg-card border border-border rounded-xl focus:outline-none focus:border-cta transition-colors appearance-none pr-8 cursor-pointer"
-            >
-              <option value="newest">Newest First</option>
-              <option value="oldest">Oldest First</option>
-              <option value="readTime">Quick Reads</option>
-            </select>
-          </div>
-
-          {/* Count */}
-          <span className="text-xs text-muted whitespace-nowrap">
-            {filteredCount === totalCount
-              ? `${totalCount} article${totalCount !== 1 ? "s" : ""}`
-              : `${filteredCount} of ${totalCount}`}
-          </span>
-        </div>
+        {search && (
+          <p className="text-xs text-muted mt-2">
+            {totalResults} result{totalResults !== 1 ? "s" : ""} found
+          </p>
+        )}
       </div>
 
-      {/* Results Grid */}
-      {filtered.length > 0 ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filtered.map((post) => (
-            <Link key={post.slug} href={`/${lang}/blog/${post.slug}`}>
-              <article className="group bg-card rounded-xl border border-border overflow-hidden hover:border-accent/40 hover:shadow-md hover:-translate-y-0.5 transition-all h-full flex flex-col">
-                {/* Image */}
-                {post.image ? (
-                  <div className="h-44 overflow-hidden">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                  </div>
-                ) : (
-                  <div className="h-44 bg-gradient-to-br from-accent/20 via-cta/10 to-gold/20 flex items-center justify-center">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="text-accent/40">
-                      <rect x="3" y="3" width="18" height="18" rx="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <path d="M21 15l-5-5L5 21" />
-                    </svg>
-                  </div>
+      {/* Category Sections */}
+      {totalResults > 0 ? (
+        <div className="space-y-14">
+          {categoryOrder.map((cat) => {
+            const catPosts = filteredGroups[cat];
+            if (!catPosts || catPosts.length === 0) return null;
+
+            const config = categoryConfig[cat as keyof typeof categoryConfig];
+
+            return (
+              <section key={cat} id={cat}>
+                {/* Category Header */}
+                <div className="flex items-baseline gap-3 mb-2">
+                  <h2 className="font-[family-name:var(--font-display)] text-xl md:text-2xl text-text">
+                    {config.label}
+                  </h2>
+                  <span className="text-xs text-muted font-medium bg-bg-2 px-2 py-0.5 rounded-full">
+                    {catPosts.length}
+                  </span>
+                </div>
+                {categoryDescriptions[cat] && (
+                  <p className="text-sub text-sm mb-5 max-w-xl">{categoryDescriptions[cat]}</p>
                 )}
 
-                {/* Content */}
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="flex items-center gap-2 mb-2.5">
-                    <span className="text-[11px] uppercase text-cta font-semibold tracking-wide">
-                      {post.category.replace(/-/g, " ")}
-                    </span>
-                    <span className="text-[11px] text-muted">&middot;</span>
-                    <span className="text-[11px] text-muted">{formatReadTime(post.readTime)} min</span>
-                  </div>
+                {/* Article List — compact, title-focused */}
+                <div className="border border-border rounded-xl overflow-hidden divide-y divide-border bg-card">
+                  {catPosts.map((post) => (
+                    <Link
+                      key={post.slug}
+                      href={`/${lang}/blog/${post.slug}`}
+                      className="group flex items-center gap-4 px-5 py-4 hover:bg-bg-2/50 transition-colors"
+                    >
+                      {/* Thumbnail (small) */}
+                      {post.image ? (
+                        <img
+                          src={post.image}
+                          alt=""
+                          className="w-16 h-12 rounded-lg object-cover shrink-0 hidden sm:block"
+                          loading="lazy"
+                        />
+                      ) : (
+                        <div className="w-16 h-12 rounded-lg bg-gradient-to-br from-accent/20 to-cta/10 shrink-0 hidden sm:block" />
+                      )}
 
-                  <h3 className="font-semibold text-text text-base leading-snug mb-2 group-hover:text-cta transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
+                      {/* Text */}
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-sm font-medium text-text group-hover:text-cta transition-colors line-clamp-1 md:line-clamp-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-xs text-sub line-clamp-1 mt-0.5 hidden sm:block">
+                          {post.description}
+                        </p>
+                      </div>
 
-                  <p className="text-sub text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
-                    {post.description}
-                  </p>
+                      {/* Meta */}
+                      <div className="shrink-0 text-right hidden md:block">
+                        <span className="text-xs text-muted">{formatDate(post.date)}</span>
+                        <span className="text-xs text-muted block">{formatReadTime(post.readTime)} min read</span>
+                      </div>
 
-                  <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/60">
-                    <span className="text-xs text-muted">{formatDate(post.date)}</span>
-                    <span className="text-cta text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Read <span>&rarr;</span>
-                    </span>
-                  </div>
+                      {/* Arrow */}
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0 text-muted group-hover:text-cta transition-colors">
+                        <path d="M9 18l6-6-6-6" />
+                      </svg>
+                    </Link>
+                  ))}
                 </div>
-              </article>
-            </Link>
-          ))}
+              </section>
+            );
+          })}
         </div>
       ) : (
         <div className="text-center py-16">
           <p className="text-sub text-sm mb-2">No articles found.</p>
-          <p className="text-muted text-xs">Try adjusting your filters or search terms.</p>
-          {(search || category !== "all") && (
+          <p className="text-muted text-xs">Try a different search term.</p>
+          {search && (
             <button
-              onClick={() => { setSearch(""); setCategory("all"); }}
+              onClick={() => setSearch("")}
               className="mt-4 px-4 py-2 text-sm text-cta border border-cta/30 rounded-full hover:bg-cta/5 transition-colors cursor-pointer"
             >
-              Clear filters
+              Clear search
             </button>
           )}
         </div>
