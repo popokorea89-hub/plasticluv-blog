@@ -77,7 +77,7 @@ export default function CategoryFilter({ allLabel, posts, lang, labels }: Catego
               <div className="p-8 md:p-10 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="text-xs uppercase text-cta font-semibold bg-cta/10 px-3 py-1 rounded-full">
-                    {featuredPost.category.replace(/-/g, " ")}
+                    {categoryConfig[featuredPost.category.toLowerCase() as keyof typeof categoryConfig]?.label || featuredPost.category}
                   </span>
                   <span className="text-xs text-muted">{formatReadTime(featuredPost.readTime)} {labels.minRead}</span>
                 </div>
@@ -108,7 +108,7 @@ export default function CategoryFilter({ allLabel, posts, lang, labels }: Catego
                 <div className="group bg-card rounded-xl border border-border p-6 hover:border-accent/40 hover:shadow-md hover:-translate-y-0.5 transition-all h-full flex flex-col">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="text-[11px] uppercase text-cta font-semibold tracking-wide">
-                      {post.category.replace(/-/g, " ")}
+                      {categoryConfig[post.category.toLowerCase() as keyof typeof categoryConfig]?.label || post.category}
                     </span>
                     <span className="text-[11px] text-muted">{formatReadTime(post.readTime)} {labels.minRead}</span>
                   </div>

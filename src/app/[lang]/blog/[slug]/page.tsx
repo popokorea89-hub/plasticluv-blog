@@ -8,6 +8,7 @@ import { Link } from "@/lib/i18n-routing";
 
 import type { Metadata } from "next";
 import { locales } from "@/lib/i18n";
+import { categoryConfig } from "@/types/blog";
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs("en");
@@ -125,7 +126,7 @@ export default async function ArticlePage({
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         <header className="text-center py-12 md:py-16 max-w-3xl mx-auto">
           <span className="inline-block text-xs uppercase text-cta font-semibold bg-cta/10 px-3 py-1 rounded-full mb-4">
-            {post.category}
+            {categoryConfig[post.category.toLowerCase() as keyof typeof categoryConfig]?.label || post.category}
           </span>
           <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-text leading-tight mb-6">
             {post.title}
