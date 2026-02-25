@@ -18,12 +18,13 @@ function formatDate(dateStr: string): string {
 
 // Category descriptions for the directory-style layout
 const categoryDescriptions: Record<string, string> = {
-  eyes: "Blepharoplasty, ptosis correction, double eyelid surgery, and other eye procedures.",
-  lifting: "Facelifts, thread lifts, and anti-aging surgical techniques.",
-  injectables: "Botox, dermal fillers, and non-surgical facial contouring.",
-  skin: "Laser treatments, skin rejuvenation, and texture improvement.",
-  "before-and-after": "Real results and patient transformation stories.",
-  "beauty-insider": "Industry trends, tips, and behind-the-scenes insights.",
+  lifting: "Deep plane facelifts, SMAS techniques, thread lifts, and surgical approaches to facial rejuvenation.",
+  eyes: "Blepharoplasty, ptosis correction, double eyelid surgery, and under-eye procedures.",
+  body: "Liposuction, body contouring, and sculpting procedures for targeted fat reduction.",
+  injectables: "Botox, dermal fillers, and non-surgical options for facial volume and wrinkle reduction.",
+  skin: "Laser resurfacing, chemical peels, and advanced treatments for skin texture and tone.",
+  recovery: "Post-operative timelines, aftercare guides, and what to expect during healing.",
+  "beauty-insider": "Industry trends, procedure comparisons, and expert insights from the clinic.",
 };
 
 export default function ArticlesClient({ posts, lang }: { posts: BlogPostMeta[]; lang: string }) {

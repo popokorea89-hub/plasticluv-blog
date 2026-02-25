@@ -32,11 +32,12 @@ export interface BlogPostMeta {
 
 export const categoryConfig = {
   all: { label: "All" },
-  eyes: { label: "Eyes" },
-  lifting: { label: "Lifting" },
-  injectables: { label: "Injectables" },
-  skin: { label: "Skin" },
-  "before-and-after": { label: "Before & After" },
+  lifting: { label: "Facelift & Anti-Aging" },
+  eyes: { label: "Eye Surgery" },
+  body: { label: "Body Contouring" },
+  injectables: { label: "Botox & Fillers" },
+  skin: { label: "Skin & Laser" },
+  recovery: { label: "Recovery & Aftercare" },
   "beauty-insider": { label: "Beauty Insider" },
 } as const;
 
