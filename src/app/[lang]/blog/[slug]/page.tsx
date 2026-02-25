@@ -10,6 +10,10 @@ import type { Metadata } from "next";
 import { locales } from "@/lib/i18n";
 import { categoryConfig } from "@/types/blog";
 
+import ReadingProgress from "@/components/ReadingProgress";
+import TableOfContents from "@/components/TableOfContents";
+import ShareButtons from "@/components/ShareButtons";
+
 export async function generateStaticParams() {
   const slugs = getPostSlugs("en");
   const params: { lang: string; slug: string }[] = [];
@@ -76,6 +80,10 @@ export default async function ArticlePage({
   const t = await getTranslations({ locale: lang, namespace: "article" });
   const related = getRelatedPosts(slug, post.category, lang);
 
+  const categoryLabel =
+    categoryConfig[post.category.toLowerCase() as keyof typeof categoryConfig]?.label || post.category;
+  const postUrl = `https://plasticluv.com/${lang}/blog/${slug}`;
+
   // Extract FAQ pairs from MDX content (bold questions followed by paragraphs)
   const faqPairs: { question: string; answer: string }[] = [];
   const faqSection = post.content.split(/^## Frequently Asked Questions/m)[1];
@@ -88,6 +96,9 @@ export default async function ArticlePage({
 
   return (
     <>
+      {/* Reading Progress Bar */}
+      <ReadingProgress />
+
       {/* Structured Data */}
       <script
         type="application/ld+json"
@@ -101,7 +112,7 @@ export default async function ArticlePage({
           __html: JSON.stringify(
             breadcrumbSchema([
               { name: "Home", url: `/${lang}` },
-              { name: "Blog", url: `/${lang}` },
+              { name: categoryLabel, url: `/${lang}` },
               { name: post.title, url: `/${lang}/blog/${slug}` },
             ])
           ),
@@ -122,24 +133,64 @@ export default async function ArticlePage({
         />
       )}
 
-      {/* Article Header */}
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <header className="text-center py-12 md:py-16 max-w-3xl mx-auto">
+
+        {/* Breadcrumb Navigation */}
+        <nav aria-label="Breadcrumb" className="pt-6 mb-2">
+          <ol className="flex items-center gap-1.5 text-xs text-muted">
+            <li>
+              <Link href="/" className="hover:text-text transition-colors">Home</Link>
+            </li>
+            <li aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-border">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </li>
+            <li>
+              <Link href="/" className="hover:text-text transition-colors">{categoryLabel}</Link>
+            </li>
+            <li aria-hidden="true">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="text-border">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </li>
+            <li className="text-sub truncate max-w-[200px] md:max-w-[400px]">{post.title}</li>
+          </ol>
+        </nav>
+
+        {/* Article Header */}
+        <header className="text-center py-10 md:py-14 max-w-3xl mx-auto">
           <span className="inline-block text-xs uppercase text-cta font-semibold bg-cta/10 px-3 py-1 rounded-full mb-4">
-            {categoryConfig[post.category.toLowerCase() as keyof typeof categoryConfig]?.label || post.category}
+            {categoryLabel}
           </span>
           <h1 className="font-[family-name:var(--font-display)] text-3xl md:text-[40px] text-text leading-tight mb-6">
             {post.title}
           </h1>
-          <div className="flex items-center justify-center gap-4 text-sm text-muted">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-sm text-muted">
             <div className="flex items-center gap-2">
               <img src="/images/dr-lee-avatar-sm.jpg" alt="Dr. Yongwoo Lee" className="w-8 h-8 rounded-full object-cover object-top" />
               <span className="font-medium text-text">Dr. Yongwoo Lee</span>
             </div>
-            <span>&middot;</span>
+            <span className="hidden sm:inline">&middot;</span>
             <span>{post.date}</span>
+            {post.updated && post.updated !== post.date && (
+              <>
+                <span>&middot;</span>
+                <span className="text-accent">{t("updated")} {post.updated}</span>
+              </>
+            )}
             <span>&middot;</span>
             <span>{typeof post.readTime === "number" ? `${post.readTime} min read` : post.readTime}</span>
+          </div>
+
+          {/* Share Buttons — under meta */}
+          <div className="mt-5 flex justify-center">
+            <ShareButtons
+              title={post.title}
+              url={postUrl}
+              label={t("share")}
+              copiedLabel={t("copied")}
+            />
           </div>
         </header>
 
@@ -178,8 +229,35 @@ export default async function ArticlePage({
               }}
             />
 
+            {/* Tags */}
+            {post.tags && post.tags.length > 0 && (
+              <div className="mt-10 pt-8 border-t border-border">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs text-muted mr-1">{t("tags")}:</span>
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs text-sub bg-bg-2 px-3 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Share (bottom of article, mobile-friendly) */}
+            <div className="mt-6 pt-6 border-t border-border flex items-center justify-between">
+              <ShareButtons
+                title={post.title}
+                url={postUrl}
+                label={t("share")}
+                copiedLabel={t("copied")}
+              />
+            </div>
+
             {/* Disclaimer */}
-            <div className="mt-12 p-5 bg-bg-2 rounded-xl border border-border">
+            <div className="mt-8 p-5 bg-bg-2 rounded-xl border border-border">
               <p className="text-xs text-muted leading-relaxed italic">
                 {t("disclaimer")}
               </p>
@@ -189,6 +267,9 @@ export default async function ArticlePage({
           {/* Sidebar */}
           <aside className="hidden lg:block">
             <div className="sticky top-24 space-y-6">
+              {/* Table of Contents */}
+              <TableOfContents label={t("tableOfContents")} />
+
               {/* CTA Card */}
               <div className="bg-text rounded-xl p-6 text-bg">
                 <h4 className="font-semibold text-sm mb-2">{t("consultation")}</h4>
@@ -251,8 +332,10 @@ export default async function ArticlePage({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {related.map((r) => (
                 <Link key={r.slug} href={`/blog/${r.slug}`}>
-                  <div className="p-6 border border-border rounded-xl hover:border-accent/40 hover:shadow-sm transition-all">
-                    <span className="text-xs uppercase text-cta font-semibold">{categoryConfig[r.category.toLowerCase() as keyof typeof categoryConfig]?.label || r.category}</span>
+                  <div className="bg-card p-6 border border-border rounded-xl hover:border-accent/40 hover:shadow-md hover:-translate-y-0.5 transition-all">
+                    <span className="text-xs uppercase text-cta font-semibold">
+                      {categoryConfig[r.category.toLowerCase() as keyof typeof categoryConfig]?.label || r.category}
+                    </span>
                     <h4 className="font-[family-name:var(--font-display)] text-base text-text mt-2 mb-3 line-clamp-2">
                       {r.title}
                     </h4>

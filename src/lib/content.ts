@@ -68,8 +68,11 @@ export function getPostsByCategory(category: string, lang: string = "en"): BlogP
 }
 
 export function getRelatedPosts(slug: string, category: string, lang: string = "en", limit = 3): BlogPostMeta[] {
-  return getAllPostsMeta(lang)
-    .filter((p) => p.slug !== slug)
-    .filter((p) => p.category.toLowerCase() === category.toLowerCase())
-    .slice(0, limit);
+  const all = getAllPostsMeta(lang).filter((p) => p.slug !== slug);
+  // Same category first
+  const sameCategory = all.filter((p) => p.category.toLowerCase() === category.toLowerCase());
+  if (sameCategory.length >= limit) return sameCategory.slice(0, limit);
+  // Fill remaining with other categories (newest first)
+  const others = all.filter((p) => p.category.toLowerCase() !== category.toLowerCase());
+  return [...sameCategory, ...others].slice(0, limit);
 }
