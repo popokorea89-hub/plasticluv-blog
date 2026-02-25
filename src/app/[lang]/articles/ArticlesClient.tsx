@@ -23,8 +23,7 @@ const categoryDescriptions: Record<string, string> = {
   body: "Liposuction, body contouring, and sculpting procedures for targeted fat reduction.",
   injectables: "Botox, dermal fillers, and non-surgical options for facial volume and wrinkle reduction.",
   skin: "Laser resurfacing, chemical peels, and advanced treatments for skin texture and tone.",
-  recovery: "Post-operative timelines, aftercare guides, and what to expect during healing.",
-  "beauty-insider": "Industry trends, procedure comparisons, and expert insights from the clinic.",
+  "patient-guide": "Choosing the right procedure, medical tourism tips, and what to know before your visit.",
 };
 
 export default function ArticlesClient({ posts, lang }: { posts: BlogPostMeta[]; lang: string }) {

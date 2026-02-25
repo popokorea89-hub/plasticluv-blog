@@ -37,8 +37,7 @@ export const categoryConfig = {
   body: { label: "Body Contouring" },
   injectables: { label: "Botox & Fillers" },
   skin: { label: "Skin & Laser" },
-  recovery: { label: "Recovery & Aftercare" },
-  "beauty-insider": { label: "Beauty Insider" },
+  "patient-guide": { label: "Patient Guide" },
 } as const;
 
 export const categories = Object.keys(categoryConfig) as (keyof typeof categoryConfig)[];
