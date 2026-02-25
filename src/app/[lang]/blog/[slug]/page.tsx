@@ -252,7 +252,7 @@ export default async function ArticlePage({
               {related.map((r) => (
                 <Link key={r.slug} href={`/blog/${r.slug}`}>
                   <div className="p-6 border border-border rounded-xl hover:border-accent/40 hover:shadow-sm transition-all">
-                    <span className="text-xs uppercase text-cta font-semibold">{r.category}</span>
+                    <span className="text-xs uppercase text-cta font-semibold">{categoryConfig[r.category.toLowerCase() as keyof typeof categoryConfig]?.label || r.category}</span>
                     <h4 className="font-[family-name:var(--font-display)] text-base text-text mt-2 mb-3 line-clamp-2">
                       {r.title}
                     </h4>
