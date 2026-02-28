@@ -105,22 +105,32 @@ export default function CategoryFilter({ allLabel, posts, lang, labels }: Catego
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {otherPosts.map((post) => (
               <Link key={post.slug} href={`/${lang}/blog/${post.slug}`}>
-                <div className="group bg-card rounded-xl border border-border p-6 hover:border-accent/40 hover:shadow-md hover:-translate-y-0.5 transition-all h-full flex flex-col">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="text-[11px] uppercase text-cta font-semibold tracking-wide">
-                      {categoryConfig[post.category.toLowerCase() as keyof typeof categoryConfig]?.label || post.category}
+                <div className="group bg-card rounded-xl border border-border overflow-hidden hover:border-accent/40 hover:shadow-md hover:-translate-y-0.5 transition-all h-full flex flex-col">
+                  {post.image && (
+                    <img
+                      src={post.image}
+                      alt={post.title}
+                      className="w-full h-44 object-cover"
+                      loading="lazy"
+                    />
+                  )}
+                  <div className="p-6 flex flex-col flex-1">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[11px] uppercase text-cta font-semibold tracking-wide">
+                        {categoryConfig[post.category.toLowerCase() as keyof typeof categoryConfig]?.label || post.category}
+                      </span>
+                      <span className="text-[11px] text-muted">{formatReadTime(post.readTime)} {labels.minRead}</span>
+                    </div>
+                    <h3 className="font-semibold text-text text-base leading-snug mb-2 group-hover:text-cta transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-sub text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
+                      {post.description}
+                    </p>
+                    <span className="text-cta text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
+                      {labels.readMore} <span>&rarr;</span>
                     </span>
-                    <span className="text-[11px] text-muted">{formatReadTime(post.readTime)} {labels.minRead}</span>
                   </div>
-                  <h3 className="font-semibold text-text text-base leading-snug mb-2 group-hover:text-cta transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-sub text-sm leading-relaxed line-clamp-2 mb-4 flex-1">
-                    {post.description}
-                  </p>
-                  <span className="text-cta text-sm font-medium flex items-center gap-1 group-hover:gap-2 transition-all mt-auto">
-                    {labels.readMore} <span>&rarr;</span>
-                  </span>
                 </div>
               </Link>
             ))}
