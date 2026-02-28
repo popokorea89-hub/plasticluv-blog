@@ -4,11 +4,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://plasticluv.com"),
   title: {
-    default: "Plastic Love — Trusted Plastic Surgery Insights from South Korea",
+    default: "Plastic Love — The Answers You Deserve Before You Decide",
     template: "%s | Plastic Love",
   },
   description:
-    "Plastic Love — where the art of aesthetics meets the science of care. By Dr. Yongwoo Lee, board-certified plastic surgeon.",
+    "Not just plastic. It's love. Evidence-based plastic surgery insights by Dr. Yongwoo Lee — the answers you deserve before you decide.",
   openGraph: {
     type: "website",
     siteName: "Plastic Love",
