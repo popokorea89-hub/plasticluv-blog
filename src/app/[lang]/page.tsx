@@ -105,7 +105,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             </span>
           </div>
           <Link href="/about" className="text-cta text-sm font-medium hover:text-cta-hover transition-colors">
-            About Dr. Lee &rarr;
+            About Dr. Yongwoo Lee &rarr;
           </Link>
         </div>
       </section>
