@@ -10,11 +10,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const t = await getTranslations({ locale: lang, namespace: "home" });
   return {
-    title: "Plastic Love — The Answers You Deserve Before You Decide",
+    title: "Plastic Love — Plastic Surgery Answers Before You Decide",
     description: "Not just plastic. It's love. Evidence-based plastic surgery insights by Dr. Yongwoo Lee — the answers you deserve before you decide.",
     keywords: ["plastic surgery", "facelift", "blepharoplasty", "anti-aging surgery", "South Korea", "Korea", "Dr. Yongwoo Lee", "VIP Plastic Surgery", "double eyelid surgery", "rhinoplasty", "botox", "fillers"],
     openGraph: {
-      title: "Plastic Love — The Answers You Deserve Before You Decide",
+      title: "Plastic Love — Plastic Surgery Answers Before You Decide",
       description: "Not just plastic. It's love. Evidence-based plastic surgery insights by Dr. Yongwoo Lee — the answers you deserve before you decide.",
       images: [{ url: "https://plasticluv.com/images/og-default.svg", width: 1200, height: 630, alt: "Plastic Love" }],
     },
