@@ -77,7 +77,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <img
             src="/images/dr-lee-avatar-lg.jpg"
             alt="Dr. Yongwoo Lee — Board-certified plastic surgeon"
-            className="w-36 h-36 rounded-full object-cover object-top shrink-0 mb-5"
+            className="w-40 h-40 rounded-full object-cover object-top shrink-0 mb-5"
             loading="lazy"
           />
           <h3 className="font-[family-name:var(--font-display)] text-xl text-text mb-3">Dr. Yongwoo Lee</h3>
