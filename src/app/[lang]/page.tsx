@@ -77,7 +77,7 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
           <img
             src="/images/dr-lee-avatar-lg.jpg"
             alt="Dr. Yongwoo Lee — Board-certified plastic surgeon"
-            className="w-40 h-40 rounded-full object-cover object-top shrink-0 mb-5"
+            className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover object-top shrink-0 mb-5"
             loading="lazy"
           />
           <h3 className="font-[family-name:var(--font-display)] text-xl text-text mb-3">Dr. Yongwoo Lee</h3>
@@ -86,21 +86,21 @@ export default async function HomePage({ params }: { params: Promise<{ lang: str
             <p>Specializing in anti-aging surgery and blepharoplasty.</p>
             <p>Every article on Plastic Love is written to help patients make informed, confident decisions.</p>
           </div>
-          <div className="grid grid-cols-2 gap-x-6 gap-y-2 mb-5">
-            <span className="flex items-center gap-1.5 text-xs text-sub justify-center">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <div className="flex flex-col sm:grid sm:grid-cols-2 gap-2 sm:gap-x-6 sm:gap-y-2 mb-5 items-center">
+            <span className="flex items-center gap-1.5 text-xs text-sub">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none" className="shrink-0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               Board Certified
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-sub justify-center">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span className="flex items-center gap-1.5 text-xs text-sub">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none" className="shrink-0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               ISAPS Member
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-sub justify-center">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span className="flex items-center gap-1.5 text-xs text-sub">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none" className="shrink-0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               University of Michigan — Ann Arbor
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-sub justify-center">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span className="flex items-center gap-1.5 text-xs text-sub">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="var(--color-gold)" stroke="none" className="shrink-0"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
               Pusan National University Hospital
             </span>
           </div>

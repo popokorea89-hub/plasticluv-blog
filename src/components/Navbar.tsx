@@ -20,6 +20,15 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
   }, []);
 
   useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
+  useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
@@ -111,24 +120,29 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
         </div>
 
         {/* Mobile Menu — Full Screen Overlay */}
-        {mobileOpen && (
-          <div className="md:hidden fixed inset-0 top-16 bg-bg z-40 px-6 pt-8 pb-12 flex flex-col animate-fade-up">
-            <div className="space-y-1">
-              <Link href="/" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">Blog</Link>
-              <Link href="/articles" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">Articles</Link>
-              <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">About</Link>
-            </div>
-            <div className="mt-8">
-              <Link
-                href="/consultation"
-                onClick={() => setMobileOpen(false)}
-                className="block text-center bg-cta text-white text-base font-medium py-3 rounded-full hover:bg-cta-hover transition-colors"
-              >
-                {t("bookConsultation")}
-              </Link>
-            </div>
+        <div
+          className={`md:hidden fixed inset-0 top-16 z-40 px-6 pt-8 pb-12 flex flex-col overflow-hidden transition-all duration-300 ${
+            mobileOpen
+              ? "opacity-100 visible translate-y-0"
+              : "opacity-0 invisible -translate-y-2"
+          }`}
+          style={{ backgroundColor: "var(--color-bg)" }}
+        >
+          <div className="space-y-1">
+            <Link href="/" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">Blog</Link>
+            <Link href="/articles" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">Articles</Link>
+            <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">About</Link>
           </div>
-        )}
+          <div className="mt-8">
+            <Link
+              href="/consultation"
+              onClick={() => setMobileOpen(false)}
+              className="block text-center bg-cta text-white text-base font-medium py-3 rounded-full hover:bg-cta-hover transition-colors"
+            >
+              {t("bookConsultation")}
+            </Link>
+          </div>
+        </div>
       </nav>
 
       {/* Spacer for fixed nav */}
