@@ -110,19 +110,23 @@ export default function Navbar({ lang, posts }: { lang: Locale; posts: BlogPostM
           </div>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu — Full Screen Overlay */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-border bg-bg/95 backdrop-blur-xl px-6 py-4 space-y-3 animate-fade-up">
-            <Link href="/" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">Blog</Link>
-            <Link href="/articles" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">Articles</Link>
-            <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-sm font-medium text-text py-2">About</Link>
-            <Link
-              href="/consultation"
-              onClick={() => setMobileOpen(false)}
-              className="block text-center bg-cta text-white text-sm font-medium py-2.5 rounded-full hover:bg-cta-hover transition-colors"
-            >
-              {t("bookConsultation")}
-            </Link>
+          <div className="md:hidden fixed inset-0 top-16 bg-bg z-40 px-6 pt-8 pb-12 flex flex-col animate-fade-up">
+            <div className="space-y-1">
+              <Link href="/" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">Blog</Link>
+              <Link href="/articles" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">Articles</Link>
+              <Link href="/about" onClick={() => setMobileOpen(false)} className="block text-lg font-medium text-text py-3 border-b border-border/50">About</Link>
+            </div>
+            <div className="mt-8">
+              <Link
+                href="/consultation"
+                onClick={() => setMobileOpen(false)}
+                className="block text-center bg-cta text-white text-base font-medium py-3 rounded-full hover:bg-cta-hover transition-colors"
+              >
+                {t("bookConsultation")}
+              </Link>
+            </div>
           </div>
         )}
       </nav>

@@ -86,6 +86,11 @@ export default async function ArticlePage({
     categoryConfig[post.category.toLowerCase() as keyof typeof categoryConfig]?.label || post.category;
   const postUrl = `https://plasticluv.com/${lang}/blog/${slug}`;
 
+  const formatDate = (dateStr: string) => {
+    const d = new Date(dateStr + "T00:00:00");
+    return d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+  };
+
   // Extract FAQ pairs from MDX content (bold questions followed by paragraphs)
   const faqPairs: { question: string; answer: string }[] = [];
   const faqSection = post.content.split(/^## Frequently Asked Questions/m)[1];
@@ -174,11 +179,11 @@ export default async function ArticlePage({
               <span className="font-medium text-text">Dr. Yongwoo Lee</span>
             </div>
             <span className="hidden sm:inline">&middot;</span>
-            <span>{post.date}</span>
+            <span>{formatDate(post.date)}</span>
             {post.updated && post.updated !== post.date && (
               <>
                 <span>&middot;</span>
-                <span className="text-accent">{t("updated")} {post.updated}</span>
+                <span className="text-accent">{t("updated")} {formatDate(post.updated)}</span>
               </>
             )}
             <span>&middot;</span>
@@ -341,7 +346,7 @@ export default async function ArticlePage({
                     <h4 className="font-[family-name:var(--font-display)] text-base text-text mt-2 mb-3 line-clamp-2">
                       {r.title}
                     </h4>
-                    <p className="text-xs text-muted">{r.date} &middot; {r.readTime} min</p>
+                    <p className="text-xs text-muted">{formatDate(r.date)} &middot; {r.readTime} min</p>
                   </div>
                 </Link>
               ))}
