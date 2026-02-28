@@ -28,6 +28,7 @@ export function getPostBySlug(slug: string, lang: string = "en"): BlogPost | nul
   return {
     slug,
     title: data.title,
+    metaTitle: data.metaTitle || undefined,
     description: data.description,
     date: data.date instanceof Date ? data.date.toISOString().split("T")[0] : String(data.date),
     updated: data.updated instanceof Date ? data.updated.toISOString().split("T")[0] : data.updated ? String(data.updated) : undefined,

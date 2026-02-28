@@ -1,6 +1,7 @@
 export interface BlogPost {
   slug: string;
   title: string;
+  metaTitle?: string;
   description: string;
   date: string;
   updated?: string;
@@ -20,6 +21,7 @@ export interface BlogPost {
 export interface BlogPostMeta {
   slug: string;
   title: string;
+  metaTitle?: string;
   description: string;
   date: string;
   updated?: string;

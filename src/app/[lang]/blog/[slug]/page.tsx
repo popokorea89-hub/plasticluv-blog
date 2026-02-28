@@ -39,12 +39,14 @@ export async function generateMetadata({
     alternates[l] = `https://plasticluv.com/${l}/blog/${slug}`;
   }
 
+  const seoTitle = post.metaTitle || post.title;
+
   return {
-    title: post.title,
+    title: seoTitle,
     description: post.description,
     authors: [{ name: "Dr. Yongwoo Lee" }],
     openGraph: {
-      title: post.title,
+      title: seoTitle,
       description: post.description,
       type: "article",
       publishedTime: post.date,
@@ -57,7 +59,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: seoTitle,
       description: post.description,
       images: post.image ? [`https://plasticluv.com${post.image}`] : ["https://plasticluv.com/images/og-default.svg"],
     },
