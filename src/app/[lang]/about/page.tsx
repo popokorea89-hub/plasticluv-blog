@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 
   return {
-    title: `${t("title")} — Board-Certified Plastic Surgeon in South Korea`,
+    title: `${t("title")} â Board-Certified Plastic Surgeon in South Korea`,
     description:
-      "Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery. University of Michigan — Ann Arbor graduate and ISAPS member specializing in anti-aging and eye surgery.",
+      "Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery. University of Michigan â Ann Arbor graduate and ISAPS member specializing in anti-aging and eye surgery.",
     alternates: {
       canonical: `https://plasticluv.com/${lang}/about`,
       languages: alternates,
@@ -112,7 +112,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <div className="md:sticky md:top-24">
             <img
               src="/images/dr-yongwoo-lee-web.jpg"
-              alt="Dr. Yongwoo Lee — Board-Certified Plastic Surgeon"
+              alt="Dr. Yongwoo Lee â Board-Certified Plastic Surgeon"
               className="w-full max-w-[360px] mx-auto rounded-2xl object-cover aspect-[3/4]"
               loading="eager"
             />
@@ -128,15 +128,20 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
 
             <div className="text-sub text-base leading-relaxed space-y-4 mb-8">
               <p>
-                Dr. Yongwoo Lee is a board-certified plastic surgeon currently practicing at VIP Plastic Surgery, South Korea. He brings a unique international perspective to aesthetic medicine, having studied Brain, Behavior and Cognitive Science at the University of Michigan — Ann Arbor before pursuing his medical degree at Pusan National University, College of Medicine.
+                Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery, South Korea.
               </p>
               <p>
-                His extensive training at Pusan National University Hospital — from internship through residency, fellowship, and a clinical professorship — has given him deep expertise in both reconstructive and aesthetic plastic surgery. He specializes in anti-aging procedures, including facelifts and upper and lower blepharoplasty, as well as liposuction, body contouring, and non-surgical treatments such as Botox, dermal fillers, thread lifting, and laser therapy.
+                He studied Brain, Behavior and Cognitive Science at the University of Michigan — Ann Arbor, and earned his medical degree at Pusan National University, College of Medicine. He completed his internship, residency, fellowship, and clinical professorship at Pusan National University Hospital.
               </p>
               <p>
-                As a member of the International Society of Aesthetic Plastic Surgery (ISAPS) and several Korean professional societies, Dr. Yongwoo Lee stays at the forefront of global aesthetic surgery advances. Through Plastic Love — born from a genuine love for the craft of plastic surgery — he shares evidence-based insights to help patients worldwide make informed decisions about their care.
+                His practice covers anti-aging procedures (facelifts, upper and lower blepharoplasty), liposuction, body contouring, and non-surgical treatments including Botox, dermal fillers, thread lifting, and laser therapy.
               </p>
-            </div>
+              <p>
+                He is a member of the International Society of Aesthetic Plastic Surgery (ISAPS) and several Korean professional societies.
+              </p>
+              <p>
+                Through Plastic Love, he shares evidence-based insights to help patients worldwide make informed decisions about their care.
+              </p>            </div>
 
           </div>
         </section>
@@ -150,7 +155,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 UM
               </div>
               <div>
-                <h4 className="font-semibold text-text">University of Michigan — Ann Arbor</h4>
+                <h4 className="font-semibold text-text">University of Michigan â Ann Arbor</h4>
                 <p className="text-sub text-sm">Bachelor of Science, Brain, Behavior and Cognitive Science</p>
               </div>
             </div>
