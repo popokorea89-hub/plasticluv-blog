@@ -21,7 +21,7 @@ export default function Footer({ lang }: { lang: Locale }) {
           <div className="flex items-center gap-3">
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/dr.popo_ps/"
+              href="https://www.instagram.com/dr.plasticlove/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 rounded-full border border-border flex items-center justify-center text-sub hover:text-accent hover:border-accent transition-colors"
