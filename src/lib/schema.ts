@@ -44,7 +44,7 @@ export function personSchema() {
     url: `${SITE_URL}/en/about`,
     sameAs: [
       "https://plasticluv.com/en/about",
-      "https://www.instagram.com/plasticluv",
+      "https://www.instagram.com/dr.plasticlove/",
       "https://www.linkedin.com/in/dr-yongwoo-lee",
     ],
     worksFor: medicalBusinessSchema(),

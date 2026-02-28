@@ -90,7 +90,7 @@ export default async function ArticlePage({
   const faqPairs: { question: string; answer: string }[] = [];
   const faqSection = post.content.split(/^## Frequently Asked Questions/m)[1];
   if (faqSection) {
-    const faqMatches = faqSection.matchAll(/\*\*(.+?)\*\*\s*\n\n([^*]+?)(?=\n\n\*\*|\s*$)/g);
+    const faqMatches = faqSection.matchAll(/\*\*(.+?)\*\*\s*\n\n([^*]+?)(?=\n\n\*\*|\n\n##|\s*$)/g);
     for (const match of faqMatches) {
       faqPairs.push({ question: match[1].trim(), answer: match[2].trim() });
     }
