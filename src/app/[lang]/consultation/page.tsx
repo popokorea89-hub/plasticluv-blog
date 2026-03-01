@@ -91,7 +91,7 @@ export default function ConsultationPage() {
               { icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z", text: "Board-certified plastic surgeon" },
               { icon: "M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z", text: "International patient coordination available" },
               { icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z", text: "Your information is kept strictly confidential" },
-              { icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", text: "No obligations — just honest, professional advice" },
+              { icon: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z", text: "No obligations &mdash; just honest, professional advice" },
             ].map((item) => (
               <div key={item.text} className="flex items-start gap-3">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cta shrink-0 mt-0.5">
@@ -115,7 +115,7 @@ export default function ConsultationPage() {
                 <p className="text-sm font-semibold text-text mb-0.5 group-hover:text-cta transition-colors">Dr. Yongwoo Lee</p>
                 <p className="text-xs text-cta font-medium mb-2">Board-Certified Plastic Surgeon</p>
                 <p className="text-xs text-sub leading-relaxed">
-                  University of Michigan — Ann Arbor &amp; Pusan National University College of Medicine. ISAPS member specializing in anti-aging and aesthetic surgery at VIP Plastic Surgery.
+                  University of Michigan &mdash; Ann Arbor &amp; Pusan National University College of Medicine. ISAPS member specializing in anti-aging and aesthetic surgery at VIP Plastic Surgery.
                 </p>
               </div>
             </div>

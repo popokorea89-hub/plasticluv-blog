@@ -14,9 +14,9 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 
   return {
-    title: `${t("title")} â Board-Certified Plastic Surgeon in South Korea`,
+    title: `${t("title")} &mdash; Board-Certified Plastic Surgeon in South Korea`,
     description:
-      "Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery. University of Michigan â Ann Arbor graduate and ISAPS member specializing in anti-aging and eye surgery.",
+      "Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery. University of Michigan, Ann Arbor graduate and ISAPS member specializing in anti-aging and eye surgery.",
     alternates: {
       canonical: `https://plasticluv.com/${lang}/about`,
       languages: alternates,
@@ -112,7 +112,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
           <div className="md:sticky md:top-24">
             <img
               src="/images/dr-yongwoo-lee-web.jpg"
-              alt="Dr. Yongwoo Lee â Board-Certified Plastic Surgeon"
+              alt="Dr. Yongwoo Lee, Board-Certified Plastic Surgeon"
               className="w-full max-w-[360px] mx-auto rounded-2xl object-cover aspect-[3/4]"
               loading="eager"
             />
@@ -131,7 +131,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 Dr. Yongwoo Lee is a board-certified plastic surgeon at VIP Plastic Surgery, South Korea.
               </p>
               <p>
-                He studied Brain, Behavior and Cognitive Science at the University of Michigan — Ann Arbor, and earned his medical degree at Pusan National University, College of Medicine. He completed his internship, residency, fellowship, and clinical professorship at Pusan National University Hospital.
+                He studied Brain, Behavior and Cognitive Science at the University of Michigan &mdash; Ann Arbor, and earned his medical degree at Pusan National University, College of Medicine. He completed his internship, residency, fellowship, and clinical professorship at Pusan National University Hospital.
               </p>
               <p>
                 His practice covers anti-aging procedures (facelifts, upper and lower blepharoplasty), liposuction, body contouring, and non-surgical treatments including Botox, dermal fillers, thread lifting, and laser therapy.
@@ -141,7 +141,8 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
               </p>
               <p>
                 Through Plastic Love, he shares evidence-based insights to help patients worldwide make informed decisions about their care.
-              </p>            </div>
+              </p>
+            </div>
 
           </div>
         </section>
@@ -155,7 +156,7 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                 UM
               </div>
               <div>
-                <h4 className="font-semibold text-text">University of Michigan â Ann Arbor</h4>
+                <h4 className="font-semibold text-text">University of Michigan &mdash; Ann Arbor</h4>
                 <p className="text-sub text-sm">Bachelor of Science, Brain, Behavior and Cognitive Science</p>
               </div>
             </div>

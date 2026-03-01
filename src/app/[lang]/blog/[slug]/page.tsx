@@ -305,7 +305,7 @@ export default async function ArticlePage({
                     <p className="text-sm font-semibold text-text mb-0.5 group-hover:text-cta transition-colors">Dr. Yongwoo Lee</p>
                     <p className="text-xs text-cta font-medium mb-2">Board-Certified Plastic Surgeon</p>
                     <p className="text-xs text-sub leading-relaxed">
-                      University of Michigan — Ann Arbor &amp; Pusan National University College of Medicine. ISAPS member specializing in anti-aging and aesthetic surgery at VIP Plastic Surgery.
+                      University of Michigan &mdash; Ann Arbor &amp; Pusan National University College of Medicine. ISAPS member specializing in anti-aging and aesthetic surgery at VIP Plastic Surgery.
                     </p>
                   </div>
                 </div>

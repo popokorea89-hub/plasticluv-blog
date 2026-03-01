@@ -79,7 +79,7 @@ export default function ArticlesClient({ posts, lang }: { posts: BlogPostMeta[];
           Browse by Topic
         </h1>
         <p className="text-sub text-base">
-          Surgical techniques, recovery guides, non-surgical options, and aftercare — all in one place.
+          Surgical techniques, recovery guides, non-surgical options, and aftercare &mdash; all in one place.
         </p>
       </div>
 
