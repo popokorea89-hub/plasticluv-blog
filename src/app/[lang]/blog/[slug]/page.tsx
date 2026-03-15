@@ -13,6 +13,7 @@ import { categoryConfig } from "@/types/blog";
 import ReadingProgress from "@/components/ReadingProgress";
 import TableOfContents from "@/components/TableOfContents";
 import ShareButtons from "@/components/ShareButtons";
+import ViewCounter from "@/components/ViewCounter";
 
 export async function generateStaticParams() {
   const slugs = getPostSlugs("en");
@@ -188,6 +189,7 @@ export default async function ArticlePage({
             )}
             <span>&middot;</span>
             <span>{typeof post.readTime === "number" ? `${post.readTime} min read` : post.readTime}</span>
+            <ViewCounter slug={slug} />
           </div>
 
           {/* Share Buttons — under meta */}
