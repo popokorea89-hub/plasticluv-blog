@@ -33,6 +33,10 @@ const training = [
   { role: "Internship", place: "Pusan National University Hospital", year: "" },
 ];
 
+const advancedTraining = [
+  { title: "Mendelson Advanced Facial Anatomy Course (MAFAC)", place: "Amsterdam, 2025" },
+];
+
 const specialties = [
   {
     title: "Facelift & Anti-Aging",
@@ -194,6 +198,27 @@ export default async function AboutPage({ params }: { params: Promise<{ lang: st
                   )}
                 </div>
                 <p className="text-sub text-sm">{item.place}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Advanced Training */}
+        <section className="py-12 border-t border-border">
+          <h2 className="font-[family-name:var(--font-display)] text-2xl text-text mb-8">Advanced Training</h2>
+          <div className="space-y-4">
+            {advancedTraining.map((item, i) => (
+              <div key={i} className="flex items-start gap-4 p-5 bg-card rounded-xl border border-cta/30 ring-1 ring-cta/10">
+                <div className="w-10 h-10 rounded-lg bg-cta/10 flex items-center justify-center shrink-0">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-cta">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c0 1.66 2.69 3 6 3s6-1.34 6-3v-5" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-text text-sm">{item.title}</h4>
+                  <p className="text-sub text-sm">{item.place}</p>
+                </div>
               </div>
             ))}
           </div>
