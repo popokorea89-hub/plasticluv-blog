@@ -49,6 +49,7 @@ export async function generateMetadata({
     openGraph: {
       title: seoTitle,
       description: post.description,
+      url: `https://plasticluv.com/${lang}/blog/${slug}`,
       type: "article",
       publishedTime: post.date,
       modifiedTime: post.updated || post.date,
