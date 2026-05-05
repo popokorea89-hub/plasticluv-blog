@@ -8,7 +8,25 @@ export function articleSchema(post: BlogPost, lang: string) {
     "@type": "MedicalWebPage",
     headline: post.title,
     description: post.description,
-    image: post.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/images/og-default.svg`,
+    image: post.image
+      ? {
+          "@type": "ImageObject",
+          url: `${SITE_URL}${post.image}`,
+          contentUrl: `${SITE_URL}${post.image}`,
+          width: 1200,
+          height: 675,
+          caption: post.title,
+          name: post.title,
+        }
+      : {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/images/og-default.svg`,
+          contentUrl: `${SITE_URL}/images/og-default.svg`,
+          width: 1200,
+          height: 630,
+          caption: "Plastic Love",
+          name: "Plastic Love",
+        },
     datePublished: post.date,
     dateModified: post.updated || post.date,
     author: personSchema(),
@@ -40,13 +58,9 @@ export function personSchema() {
     "@type": "Person",
     name: "Dr. Yongwoo Lee",
     jobTitle: "Board-Certified Plastic Surgeon",
-    image: `${SITE_URL}/images/dr-lee-avatar-lg.jpg`,
+    image: `${SITE_URL}/images/dr-lee-avatar.svg`,
     url: `${SITE_URL}/en/about`,
-    sameAs: [
-      "https://plasticluv.com/en/about",
-      "https://www.instagram.com/dr.plasticlove/",
-      "https://www.linkedin.com/in/dr-yongwoo-lee",
-    ],
+    sameAs: [],
     worksFor: medicalBusinessSchema(),
     alumniOf: [
       {
@@ -141,7 +155,7 @@ export function websiteSchema() {
     "@type": "WebSite",
     name: "Plastic Love",
     url: SITE_URL,
-    description: "Plastic Love — where the art of aesthetics meets the science of care. By Dr. Yongwoo Lee, board-certified plastic surgeon.",
+    description: "Evidence-based plastic surgery insights from Dr. Yongwoo Lee, a board-certified plastic surgeon in South Korea.",
     publisher: {
       "@type": "Organization",
       name: "Plastic Love",
